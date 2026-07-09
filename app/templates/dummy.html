@@ -1,0 +1,288 @@
+<header>
+                <nav>
+                    <ul class="navbar">
+                        <li class="category-item"><a href="{% url 'shopbycategory' %}" class="list">Shop By Category</a></li>
+                        <li class="category-item2"><a href="" class="list">Shop By Collection</a></li>
+                        <li><a href="" class="list">Sale</a></li>
+                        <li class="category-item3"><a href="{% url 'policy' %}" class="list">Policy</a></li>
+                        <li><a href="{% url 'fitguide' %}" class="list">Fit Guide</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            
+    {% comment %} <div class="nav-logo">
+            <img src="{% static 'images/logo4.jpg' %}" class="logo" alt="logo">
+        </div> {% endcomment %}
+        <div class="icon-box {% if bag %}hide-icons{% endif %}">
+            <a href="{% url 'search' %}"><div><img class="icon" id="search-logo" src="{% static 'images/SearchIconLogoImage.png' %}" alt="search-icon"></div></a>
+            <a href="{% url 'account' %}"><div><img class="icon" src="{% static 'images/UserLogoImage.png' %}" alt="profile-icon"></div></a>
+            <a href="{% url 'bag' %}"><div><img class="icon" src="{% static 'images/BagLogoImage.png' %}" alt="bag-logo"></div></a>            
+            {% comment %} <a href="{% url 'cartpay' %}"><div><img class="icon" src="{% static 'images/BagLogoImage.png' %}" alt="bag-logo"></div></a> {% endcomment %}
+        </div>
+
+
+        <!-- <a href="{% url 'otc' %}" class="ots-link"><div class="newlaunch-items">
+        <img src="{% static 'images/creator-oversizetshirt2.png' %}" width="376.300px" height="566.850px" alt="">
+        <span class="greytshirt-title">The Creator Oversized T-shirt</span>
+        <div><span class="prizes"> <span class="price">₹ 1,599.00</span>&nbsp;<del class="cut-price">₹ 1,999.00</del> </span></div>
+        <div class="product-variants">
+            <a href="" class="variant-size"> <span class="sizes">XS</span> </a>
+            <a href="" class="variant-size"> <span class="sizes">S</span> </a>
+            <a href="" class="variant-size"> <span class="sizes">M</span> </a>
+            <a href="" class="variant-size"> <span class="sizes">L</span> </a>
+            <a href="" class="variant-size"> <span class="sizes">XL</span> </a>
+            <a href="" class="variant-size"> <span class="sizes">XXL</span> </a>
+        </div>
+    </div></a> -->
+
+    <!-- cartpay.html -->
+     <!-- {% block css %} 
+{{ block.super }} 
+<link rel="stylesheet" href="{% static 'css/cartpay.css' %}"> 
+{% endblock css %} 
+
+{% block content %}
+
+<div class="cartmain-box"> 
+    <div class="cart-holder">
+        <strong class="cart-name">Your Cart</strong>
+        <a href="{% url 'landing' %}"><i class="fa-solid fa-xmark fa-2xs" id="cross-mark" style="color: rgb(74, 77, 83);"></i></a>
+    </div> 
+
+    <div class="cartbox-headline">
+        <p class="headline">Loved by 150,000+ customers💖</p>
+    </div>
+
+    <hr>
+
+    <div class="secondcart-box">
+        <div class="inside-box">
+            <img src="{% static 'images/tcot3.jpg' %}" height="70px" width="51.48px" alt="">
+
+            <div class="photo-desc">
+                <span class="photo-descname">The Creator 0versized T-shirt</span>
+                <span class="photo-descsize">XL</span>
+            </div>
+
+            <div class="price-box">
+                <div class="cart-price">₹ 1,599.00</div> 
+                <del class="cart-cutprice2">₹ 1,999.00</del>
+                <a href=""><i id="garbage" class="fa-regular fa-trash-can fa-2xs" style="color: rgb(35, 34, 33);"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    <div class="total-block">
+        <span class="subtotal">Subtotal</span> 
+        <span  class="subtotal">₹ 1,599.00</span>
+    </div>
+
+    <br>
+    <form action="" method="post">
+        <button type="submit" class="buy-button">PROCEED TO BUY</button>
+    </form>
+
+    <p></p>
+    <div class="return-line">✓ 7 Days easy exchange & returns</div>
+
+
+</div> 
+
+{% endblock content %} -->
+
+<!-- cartpay.css -->
+ <!-- .cartmain-box{ 
+    position: fixed; 
+    top: 0; 
+    right: 0; 
+    width: 400px; 
+    height: 100vh; 
+    background: white; 
+    z-index: 10000; 
+    overflow: hidden; 
+    border-top-left-radius: 11px; 
+    border-bottom-left-radius: 11px; 
+}
+
+.cartmain-box{
+    display: block; 
+} 
+    
+.cart-holder{
+    border: 1px solid none;
+    height: 44px;
+    width: 400px;
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 280px;
+}
+
+.cart-name{
+    font-size: 16px;
+    margin-top: -5px;
+}
+
+.cart-holder #cross-mark{
+    font-size: 15px;
+    margin-top: 4px;
+}
+
+.cartbox-headline{
+    border: 1px solid white;
+    height: 32.800px;
+    width: 400px;
+    background-color: lightgray;
+}
+
+.headline{
+    font-size: 12px;
+    font-weight: 800;
+    font-style: normal;
+    font-family: Assistant,sans-serif;
+    color: rgba(0, 0, 0, 0.81);
+    text-align: center;
+    margin-top: 7px;
+}
+
+.secondcart-box{
+    border: 1px solid gray;
+    border-radius: 10px;
+    height: 117.200px;
+    width: 380px;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inside-box{
+    border: 0.5px solid white;
+    height: 73px;
+    width: 340px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* gap: 5px; */
+}
+
+.photo-desc{
+    border: 0.5px solid white;
+    height: 60.800px;
+    width: 150.125px;
+}
+
+.photo-descname{
+    font-size: 12px;
+    font-weight: 400;
+    font-style: normal;
+    font-family: Assistant,sans-serif;
+    color: rgba(0, 0, 0, 0.81);
+}
+
+.photo-descsize{
+    font-size: 13px;
+    font-weight: 400;
+    font-style: normal;
+    font-family: Assistant,sans-serif;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.price-box{
+    border: 0.5px solid white;
+    height: 65.800px;
+    width: 100px;
+}
+
+.cart-price{
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    font-family: Assistant,sans-serif;
+    color: rgba(0, 0, 0, 0.81);
+    text-align: right;
+}
+
+.cart-cutprice2{
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    font-family: Assistant,sans-serif;
+    color: lightgray;
+    /* text-align: right; */
+    padding-left: 37px;
+}
+
+#garbage{
+    text-align: right;
+    font-size: 12px;
+    padding-left: 80px;
+}
+
+.total-block{
+    border: 1px solid white;
+    height: 22.400px;
+    width: 352px;
+    margin-left: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.subtotal{
+    font-size: 16px;
+    font-weight: 800;
+    font-style: normal;
+    font-family: Assistant,sans-serif;
+    color: rgba(0, 0, 0, 0.81);
+}
+
+.buy-button{
+    border: 0.5px solid rgb(255, 112, 0);
+    height: 62px;
+    width: 352px;
+    margin-left: 24px;
+    border-radius: 15px;
+    color: white;
+    background-color: rgb(255, 112, 0);
+}
+
+.return-line{
+    text-align: center;
+    font-size: 12px;
+    font-style: normal;
+    font-family: Assistant,sans-serif;
+    color: rgba(0, 0, 0, 0.81);
+    font-weight: 600px;
+}
+
+ -->
+
+ <!-- <input type="number" readonly name="product_quantity" value="{{ item.quantity }}" id=""> <br><br> -->
+
+ <!--def search(req):
+    if 'emp_id' in req.session:
+        e_id=req.session.get('emp_id')
+        emp_data = Employee.objects.get(id=e_id)
+        if req.method == 'POST':
+            s = req.POST.get('search')
+            # all_query = Query.objects.filter(Email=emp_data.Email,Query=s)
+            # all_query = Query.objects.filter(Email=emp_data.Email,Query = s,Departments=s)
+            # all_query = Query.objects.filter(Email__icontains=emp_data.Email,Query__icontains = s)
+            # all_query = Query.objects.filter(Email=emp_data.Email,Query__icontains = s)
+            # all_query = Query.objects.filter(Email=emp_data.Email,Query__icontains = s,Dept__icontains = s)
+            # return render(req,'empdashboard.html',{'data':emp_data,'all_query':all_query,'s':s,'all_q':True})
+            # all_query = Query.objects.filter(Email=emp_data.Email and (Q(Query__icontains = s) | Q(Dept__icontains = s)))
+            all_query = Query.objects.filter(Email=emp_data.Email).filter(Q(Query__icontains=s) | Q(Dept__icontains=s))
+            print(all_query)
+            return render(req,'empdashboard.html',{'data':emp_data,'all_query':all_query,'s':s,'all_q':True})
+        else:
+            e_id = req.session.get('emp_id')
+            emp_data = Employee.objects.get(id=e_id)
+            all_query = Query.objects.filter(Email=emp_data.Email)
+            return render(req,'empdashboard.html',{'data':emp_data,'all_q':True,'all_query':all_query})
+    else:
+        return redirect('login')  -->

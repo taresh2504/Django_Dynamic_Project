@@ -1,0 +1,441 @@
+{% load static %}
+
+{% block title %}
+<title>Admin Dashboard</title>
+{% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/admindashboard.css' %}">
+{% endblock css %} 
+    
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<div class="topbar">
+
+    <!-- LEFT -->
+    <div class="admin-info">
+        <img src="{{ data.photo.url }}" class="admin-img">
+        <div class="admin-text">Welcome {{ data.username }}</div>
+    </div>
+
+    <!-- CENTER -->
+    <div class="logo">
+        <img src="{% static 'images/logo4.jpg' %}" width="70px" height="70px" alt="">
+    </div>
+
+    <!-- RIGHT -->
+    <a href="{% url 'logout' %}" class="logout-btn">Logout</a>
+
+</div>
+
+<!-- ===== MAIN ===== -->
+<div class="container">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <h3>Dashboard</h3>
+
+        <a href="{% url 'add_category' %}">Add Category</a>
+        <a href="{% url 'show_category' %}">Show Category</a>
+
+        <a href="{% url 'add_product' %}">Add Products</a>
+        <a href="{% url 'show_product' %}">Show Products</a>
+
+        <a href="{% url 'add_product_image' %}">Add Product Images</a>
+        <a href="{% url 'add_product_size' %}">Add Product Size</a>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="content">
+        <h2>Admin Dashboard</h2>
+ 
+
+        {% if messages %}
+            {% for message in messages %}
+                <p>{{message}}</p>
+            {% endfor %}
+        {% endif %}
+
+        {% if add_category %}
+
+<div class="form-container">
+    <form method="post" action="{% url 'save_category' %}" enctype="multipart/form-data" class="category-form">
+        {% csrf_token %}
+
+        <h2>Add Category</h2>
+
+        <div class="form-group">
+            <label>Enter Category Name</label>
+            <input type="text" name="category_name">
+        </div>
+
+        <div class="form-group">
+            <label>Upload Category Image</label>
+            <input type="file" name="category_image">
+        </div>
+
+        <button type="submit">Add Category</button>
+    </form>
+</div>
+
+    {% elif show_category %}
+
+<div class="table-container">
+
+    <h2>All Categories</h2>
+
+    <table class="category-table">
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Category Name</th>
+                <th>Image</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for i in all_ctgr %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ i.name }}</td>
+                <td>
+                    <img src="{{ i.image.url }}" class="cat-img">
+                </td>
+                <td>
+                    <a href="{% url 'edit_category' pk=i.id %}">
+                        <button class="edit-btn">Edit</button>
+                    </a>
+
+                    <a href="{% url 'delete_category' pk=i.id %}">
+                        <button class="delete-btn">Delete</button>
+                    </a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="4">No Categories Found</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+        {% if old_ctgr %}
+<div class="edit-container">
+
+    <h3 class="edit-title">Update Category</h3>
+
+    <form action="{% url 'update_category' pk=old_ctgr.id %}" 
+          method="post" 
+          enctype="multipart/form-data" 
+          class="edit-form">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label>Category Name</label>
+            <input type="text" name="name" value="{{old_ctgr.name}}">
+        </div>
+
+        <div class="form-group">
+            <label>Current Image</label><br>
+            <img src="{{old_ctgr.image.url}}" class="preview-img">
+        </div>
+
+        <div class="form-group">
+            <label>Change Image</label>
+            <input type="file" name="image">
+        </div>
+
+        <button type="submit" class="update-btn">Update</button>
+    </form>
+
+</div>
+{% endif %}
+
+</div>
+
+
+    {% elif add_product %}
+
+<div class="form-container">
+    <form action="{% url 'save_product' %}" method="post" enctype="multipart/form-data" class="product-form">
+        {% csrf_token %}
+
+        <h2>Add Product</h2>
+
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" name="product_name" placeholder="Enter Product Name" required>
+        </div>
+
+        <div class="form-group">
+            <label>Price</label>
+            <input type="number" name="product_price" placeholder="Enter Product Price" required>
+        </div>
+
+        <div class="form-group">
+            <label>Old Price</label>
+            <input type="number" name="old_price" placeholder="Enter Old Price">
+        </div>
+
+        <div class="form-group">
+            <label>Description</label>
+            <textarea name="product_description" placeholder="Enter Product Description" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>Select Category</label>
+            <select name="category" required>
+                <option value="" disabled selected>Select Category</option>
+                {% for i in all_ctgr %}
+                    <option value="{{i.id}}">{{i.name}}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Upload Product Image</label>
+            <input type="file" name="main_image" required>
+        </div>
+
+        <button type="submit">Add Product</button>
+    </form>
+</div>
+
+    {% elif show_product %}
+
+<div class="table-container">
+
+    <h2>All Products</h2>
+
+    <table class="category-table">
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Available Sizes</th>
+                <th>Action</th>  <!-- ✅ ADD -->
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for i in all_prdct %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+
+                <td>
+                    <img src="{{ i.main_image.url }}" class="cat-img">
+                </td>
+
+                <td>{{ i.name }}</td>
+                <td>₹{{ i.price }}</td>
+                <td>{{ i.category.name }}</td>
+
+                <td>
+                    {% for size in i.productsize_set.all %}
+                        <span class="size-badge">{{ size.size }}</span>
+                    {% empty %}
+                        No Sizes
+                    {% endfor %}
+                </td>
+
+                <!-- ✅ ACTION BUTTONS -->
+                <td>
+                    <a href="{% url 'edit_product' pk=i.id %}" class="edit-btn">
+                        Edit
+                    </a>
+
+                    <a href="{% url 'delete_product' pk=i.id %}" class="delete-btn">
+                        Delete
+                    </a>
+                </td>
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    {% if old_product %}
+<div class="product-edit-container">
+
+    <h3 class="edit-title">Update Product</h3>
+
+    <form action="{% url 'update_product' pk=old_product.id %}" 
+          method="post" 
+          enctype="multipart/form-data" 
+          class="product-form">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" name="name" value="{{old_product.name}}">
+        </div>
+
+        <div class="form-group">
+            <label>Price</label>
+            <input type="number" name="price" value="{{old_product.price}}">
+        </div>
+
+        <div class="form-group">
+            <label>Category</label>
+            <select name="category">
+                {% for c in all_ctgr %}
+                    <option value="{{c.id}}" {% if c.id == old_product.category.id %}selected{% endif %}>
+                        {{c.name}}
+                    </option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Current Image</label><br>
+            <img src="{{old_product.main_image.url}}" class="preview-img">
+        </div>
+
+        <div class="form-group">
+            <label>Change Image</label>
+            <input type="file" name="main_image">
+        </div>
+
+        <div class="form-group">
+            <label>Sizes & Stock</label>
+
+            <div class="size-stock-grid">
+                <div>
+                    <span>XS</span>
+                    <input type="checkbox" name="sizes" value="XS">
+                    <input type="number" name="stock_XS" placeholder="Stock">
+                </div>
+
+                <div>
+                    <span>S</span>
+                    <input type="checkbox" name="sizes" value="S">
+                    <input type="number" name="stock_S" placeholder="Stock">
+                </div>
+
+                <div>
+                    <span>M</span>
+                    <input type="checkbox" name="sizes" value="M">
+                    <input type="number" name="stock_M" placeholder="Stock">
+                </div>
+
+                <div>
+                    <span>L</span>
+                    <input type="checkbox" name="sizes" value="L">
+                    <input type="number" name="stock_L" placeholder="Stock">
+                </div>
+
+                <div>
+                    <span>XL</span>
+                    <input type="checkbox" name="sizes" value="XL">
+                    <input type="number" name="stock_XL" placeholder="Stock">
+                </div>
+
+                <div>
+                    <span>XXL</span>
+                    <input type="checkbox" name="sizes" value="XXL">
+                    <input type="number" name="stock_XXL" placeholder="Stock">
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="update-btn">Update Product</button>
+
+    </form>
+
+</div>
+{% endif %}
+
+</div>
+
+
+
+    {% elif add_product_image %}
+
+<div class="form-container">
+
+    <form action="{% url 'save_product_image' %}" method="post" enctype="multipart/form-data" class="product-form">
+        {% csrf_token %}
+
+        <h2>Add Product Images</h2>
+
+        <div class="form-group">
+            <label>Select Product</label>
+            <select name="product_name" required>
+                <option value="" disabled selected>Select Product</option>
+                {% for i in all_prdct %}
+                    <option value="{{i.id}}">{{i.name}}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Upload Images</label>
+            <input type="file" name="product_image" required>
+        </div>
+
+        <button type="submit">Upload Images</button>
+
+    </form>
+
+</div>
+
+    {% elif add_product_size %}
+
+<div class="form-container">
+
+    <form action="{% url 'save_product_size' %}" method="post" class="product-form">
+        {% csrf_token %}
+
+        <h2>Add Product Size</h2>
+
+        <div class="form-group">
+            <label>Select Product</label>
+            <select name="product" required>
+                <option value="" disabled selected>Select Product</option>
+                {% for i in all_prdct %}
+                    <option value="{{i.id}}">{{i.name}}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Select Size</label>
+            <select name="size" required>
+                <option value="" disabled selected>Select Size</option>
+                <option value="XS">XS</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="XXL">XXL</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Stock</label>
+            <input type="number" name="stock" placeholder="Enter Stock" required>
+        </div>
+
+        <button type="submit">Add Size</button>
+
+    </form>
+
+</div>
+
+{% endif %}
+        <!-- Yaha tu apne conditions laga sakta hai -->
+    </div>
+
+</div>
+
+</body>
+</html>

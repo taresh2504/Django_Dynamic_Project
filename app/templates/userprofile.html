@@ -1,0 +1,121 @@
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/userprofile.css' %}">
+{% endblock css %} 
+
+{% block title %}
+<title>UserProfile</title>
+{% endblock title %} 
+
+<div class="profile-container">
+
+    <!-- LEFT SIDEBAR -->
+    <div class="sidebar">
+
+        <div class="profile-top">
+            <img src="{{ data.photo.url }}" class="profile-img">
+            <h3>Welcome, {{ data.username }}!</h3>
+        </div>
+
+        <div class="menu">
+            <a href="{% url 'profile_data' pk=data.id %}" class="menu-btn">My Profile</a>
+            <a href="{% url 'my_orders' pk=data.id %}" class="menu-btn">My Orders</a>
+            <a href="{% url 'logout' %}" class="menu-btn">Log out</a>
+        </div>
+
+    </div>
+
+    <!-- RIGHT CONTENT -->
+    <div class="main-content">
+    <img src="{% static 'images/logo4.jpg' %}" class="center-logo">
+
+    {% if my_profile %}
+
+    <div class="profile-card">
+
+        <div class="card-top">
+            {% if data.photo %}
+                <img src="{{ data.photo.url }}" class="card-img">
+            {% else %}
+                <img src="{% static 'images/UserLogoImage.png' %}" class="card-img">
+            {% endif %}
+        </div>
+
+        <div class="card-body">
+            <p><strong>Name:</strong> {{ data.username }}</p>
+            <p><strong>Email:</strong> {{ data.email }}</p>
+            <p><strong>Contact:</strong> {{ data.contact }}</p>
+            <p><strong>Address:</strong> {{ data.address }}</p>
+        </div>
+
+        <div class="card-btn">
+            <a href="#" class="edit-btn">Edit Profile</a>
+        </div>
+
+    </div>
+
+    {% elif my_orders %}
+
+<div class="orders-container">
+
+    <h2>My Orders</h2>
+
+    <table class="orders-table">
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Order ID</th>
+                <th>Payment ID</th>
+                <th>Payment Signature</th>
+                <th>Product</th>
+                <th>Size</th>
+                <th>Qty</th>
+                <th>Price</th>
+                <th>Total</th>
+                <th>Status</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for o in orders %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ o.order_id }}</td>
+                <td>{{ o.razorpay_payment_id }}</td>
+                <td>{{ o.razorpay_signature }}</td>
+                <td>{{ o.product.name }}</td>
+                <td>{{ o.size }}</td>
+                <td>{{ o.quantity }}</td>
+                <td>₹{{ o.price }}</td>
+                <td>₹{{ o.total_amount }}</td>
+
+                <td>
+                    {% if o.payment_status %}
+                        Paid
+                    {% else %}
+                        Pending
+                    {% endif %}
+                </td>
+
+                <td>{{ o.created_at|date:"d M Y" }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="9">No Orders Yet</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+
+
+
+
+
+    {% endif %}
+</div>
+
+</div>

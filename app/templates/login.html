@@ -1,0 +1,54 @@
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock css %} 
+
+{% block title %}
+<title>Log-in</title>
+{% endblock title %} 
+
+{% block content %}
+
+<div class="main-box">
+    <div class="login-box">
+        <br>
+        <p class="overlays-title">Overlays</p>
+        <!-- <br> -->
+        <h1 class="signup-title">Log in</h1>
+
+        {% if messages %}
+            {% for message in messages %}
+                <span class="error-msg">{{message}}</span>
+            {% endfor %}
+        {% endif %}
+
+        <form action="{% url 'logindata' %}" method="post" class="form-box">
+            {% csrf_token %}
+
+            <input type="email" class="name-box" name="email" placeholder="Enter Email" required><br><br>
+
+            <input class="name-box" minlength="8" maxlength="15" type="password" name="password" placeholder="Enter Password" required><br><br>
+            {% if msg %}
+            <span class="error-msg">{{ msg }}</span>
+            {% endif %} 
+
+            <input type="submit" class="register-button" value="Login">
+        </form>
+
+        <br>
+        <div class="signup-loginbox">
+        <p>Don't have an account? Go Signup first <a href="{% url 'signup' %}">Signup</a> </p>
+        </div>
+
+        <div class="forgotpassword-box">
+            <p><a href="{% url 'forget_password' %}">Forgot password?</a></p>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+{% endblock content %}

@@ -1,0 +1,329 @@
+{% extends "base.html" %} 
+
+{% load static %} 
+
+{% block css %}
+{{ block.super }}
+    <link rel="stylesheet" href="{% static 'css/landing.css' %}">
+{% endblock css %}
+
+{% block content %}
+<!-- Round_cloth-box -->
+<br>
+{% if category %}
+<div class="maincloth-box">
+    {% for i in category %}
+    <div class="tshirt-box">
+
+        <a href="{% url 'category_products' i.id %}" style="text-decoration: none; color: inherit;">
+            <div class="round-image-box">
+                <img src="{{ i.image.url }}" class="round-photos" alt="">
+                <span class="oversizedtshirt-content">{{ i.name }}</span>
+            </div>
+        </a>
+
+    </div>
+    {% endfor %} 
+</div>
+{% endif %}
+ 
+
+<div class="movement-box">
+  <div id="wavesCarousel" class="carousel slide" data-bs-ride="carousel">
+
+    <div class="carousel-inner">
+
+      <div class="carousel-item active" data-bs-interval="2000">
+        <img src="{% static 'images/waves.png' %}" class="d-block w-100" height="465px">
+      </div>
+
+      <div class="carousel-item" data-bs-interval="2000">
+        <img src="{% static 'images/rebellion.png' %}" class="d-block w-100" height="465px">
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- User Visit Box -->
+<div class="uservisit-box">
+    <div class="user-visit">
+        <img src="{% static 'images/customers.jpg' %}" height="32px" class="customers-photo" width="32px" alt="">
+        <p class="customer-content">1,50,000+ <br> Satisfied Customers </p>
+    </div>
+    <div class="user-visit">
+        <img src="{% static 'images/location.jpg' %}" height="32px" class="customers-photo" width="32px" alt="">
+        <p class="customer-content">9,820+ <br> Pincodes Reached </p>
+    </div>
+    <div class="user-visit">
+        <img src="{% static 'images/truck.jpg' %}" height="32px" class="customers-photo" width="32px" alt="">
+        <p class="customer-content">Ships within <br> 12 Hours </p>
+    </div>
+</div> 
+
+<br>
+<br>
+<div class="train-wrapper">
+<div class="summer-escapeboxholder">
+    <div class="summer-escapebox">
+        <img src="{% static 'images/summer_escape.jpg' %}" width="250px" height="338.538px" alt="">
+    </div>
+    <div class="summer-escapebox">
+        <img src="{% static 'images/concert-ready.jpg' %}" width="250px" height="338.538px" alt="">
+    </div>
+    <div class="summer-escapebox">
+        <img src="{% static 'images/the-perfect-date.jpg' %}" width="250px" height="338.538px" alt="">
+    </div>
+    <div class="summer-escapebox">
+        <img src="{% static 'images/cafe_hopping.jpg' %}" width="250px" height="338.538px" alt="">
+    </div>
+    <div class="summer-escapebox">
+        <img src="{% static 'images/summer_escape.jpg' %}" width="250px" height="338.538px" alt="">
+    </div>
+    <div class="summer-escapebox">
+        <img src="{% static 'images/concert-ready.jpg' %}" width="250px" height="338.538px" alt="">
+    </div>
+    <div class="summer-escapebox">
+        <img src="{% static 'images/the-perfect-date.jpg' %}" width="250px" height="338.538px" alt="">
+    </div>
+    <div class="summer-escapebox">
+        <img src="{% static 'images/cafe_hopping.jpg' %}" width="250px" height="338.538px" alt="">
+    </div>
+</div>
+</div>
+
+<br>
+<h2 class="new-launch">NEW LAUNCH 🚀</h2>
+
+<br>
+{% if product %} 
+<div class="newlaunch-itemsbox">
+
+    {% for i in product %}
+
+    <div class="newlaunch-items"
+         onclick="window.location.href='{% url 'category_products' i.category.id %}'"
+         style="cursor:pointer;">
+
+        <img src="{{ i.main_image.url }}" class="product-img" alt="">
+
+        <span class="greytshirt-title">{{ i.name }}</span>
+
+        <div>
+            <span class="prizes">
+                <span class="price">₹ {{ i.price }}</span>
+                &nbsp;
+                <del class="cut-price">₹ {{ i.old_price }}</del>
+            </span>
+        </div>
+
+        <div class="product-variants">
+            {% for s in i.productsize_set.all %}
+                {% if s.stock > 0 %}
+                    <span class="variant-size">
+                        <span class="sizes">{{ s.size }}</span>
+                    </span>
+                {% endif %}
+            {% empty %}
+                <span>No sizes available</span>
+            {% endfor %}
+        </div>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+{% endif %}
+
+
+<div class="extraspace">  </div>
+<br>
+<div class="train-wrapper">
+<div class="summer-escapeboxholder">
+    <div class="summer-escapebox">
+        <img src="{% static 'images/techburner-favouirate.jpg' %}" width="250px" height="338.538px" alt="">
+    </div>
+    <div class="summer-escapebox">
+        <img src="{% static 'images/kumudfavrate.jpg' %}" width="250px" height="338.538px" alt="">
+    </div>
+    <div class="summer-escapebox">
+        <img src="{% static 'images/pranayfavrate.jpg' %}" width="250px" height="338.538px" alt="">
+    </div>
+    <div class="summer-escapebox">
+        <img src="{% static 'images/rishabhfavrate.jpg' %}" width="250px" height="338.538px" alt="">
+    </div>
+    <div class="summer-escapebox">
+        <img src="{% static 'images/yuvrajpicks.jpg' %}" width="250px" height="338.538px" alt="">
+    </div>
+    <div class="summer-escapebox">
+        <img src="{% static 'images/venkateshpicks.jpg' %}" width="250px" height="338.538px" alt="">
+    </div>
+    <div class="summer-escapebox">
+        <img src="{% static 'images/techburner-favouirate.jpg' %}" width="250px" height="338.538px" alt="">
+    </div>
+    <div class="summer-escapebox">
+        <img src="{% static 'images/kumudfavrate.jpg' %}" width="250px" height="338.538px" alt="">
+    </div>
+    <div class="summer-escapebox">
+        <img src="{% static 'images/pranayfavrate.jpg' %}" width="250px" height="338.538px" alt="">
+    </div>
+    <div class="summer-escapebox">
+        <img src="{% static 'images/rishabhfavrate.jpg' %}" width="250px" height="338.538px" alt="">
+    </div>
+    <div class="summer-escapebox">
+        <img src="{% static 'images/yuvrajpicks.jpg' %}" width="250px" height="338.538px" alt="">
+    </div>
+    <div class="summer-escapebox">
+        <img src="{% static 'images/venkateshpicks.jpg' %}" width="250px" height="338.538px" alt="">
+    </div>
+</div>
+</div>
+
+<br>
+<a href="">
+<div class="movement-box">
+  <div id="wavesCarousel" class="carousel slide" data-bs-ride="carousel">
+
+    <div class="carousel-inner">
+
+      <div class="carousel-item active" data-bs-interval="2000">
+        <img src="{% static 'images/unleashbeast.png' %}" class="d-block w-100" height="465px">
+      </div>
+
+      <div class="carousel-item" data-bs-interval="2000">
+        <img src="{% static 'images/builtforsummer.png' %}" class="d-block w-100" height="465px">
+      </div>
+
+    </div>
+
+  </div>
+</div>
+</a>
+
+<br>
+<h2 class="new-launch">THE OVERLAYS FEED 🔥</h2>
+
+<div class="overlaysfeed-box">
+    <video src="{% static 'videos/metrovideo.mp4' %}" height="774.2px" width="464.525px" autoplay loop muted></video>
+    <video src="{% static 'videos/bbcourtvideo.mp4' %}" height="774.2px" width="464.525px" autoplay loop muted></video>
+    <video src="{% static 'videos/bulletdrivingvideo.mp4' %}" height="774.2px" width="464.525px" autoplay loop muted></video>
+</div>
+
+<h2 class="new-launch">COMMUNITY SQUAD OL 🚀</h2>
+
+<div class="community-squad">
+    <img src="{% static 'images/cs1.jpg' %}" class="csimg-box" alt="">
+    <img src="{% static 'images/cs2.jpg' %}" class="csimg-box" alt="">
+    <img src="{% static 'images/cs3.jpg' %}" class="csimg-box" alt="">
+    <img src="{% static 'images/cs4.jpg' %}" class="csimg-box" alt="">
+    <img src="{% static 'images/cs5.jpg' %}" class="csimg-box" alt="">
+    <img src="{% static 'images/cs6.jpg' %}" class="csimg-box" alt="">
+    <img src="{% static 'images/cs7.jpg' %}" class="csimg-box" alt="">
+</div>
+
+<div class="extraspace">  </div>
+<br>
+<div class="train-wrapper">
+<div class="summer-escapeboxholder">
+    <div class="summer-escapebox">
+        <img src="{% static 'images/csg1.jpg' %}" width="250px" height="338.538px" alt="">
+    </div>
+    <div class="summer-escapebox">
+        <img src="{% static 'images/csg2.jpg' %}" width="250px" height="338.538px" alt="">
+    </div>
+    <div class="summer-escapebox">
+        <img src="{% static 'images/csg3.jpg' %}" width="250px" height="338.538px" alt="">
+    </div>
+    <div class="summer-escapebox">
+        <img src="{% static 'images/csg4.jpg' %}" width="250px" height="338.538px" alt="">
+    </div>
+    <div class="summer-escapebox">
+        <img src="{% static 'images/csg5.jpg' %}" width="250px" height="338.538px" alt="">
+    </div>
+    <div class="summer-escapebox">
+        <img src="{% static 'images/csg6.jpg' %}" width="250px" height="338.538px" alt="">
+    </div>
+    <div class="summer-escapebox">
+        <img src="{% static 'images/csg7.jpg' %}" width="250px" height="338.538px" alt="">
+    </div>
+    <div class="summer-escapebox">
+        <img src="{% static 'images/csg1.jpg' %}" width="250px" height="338.538px" alt="">
+    </div>
+    <div class="summer-escapebox">
+        <img src="{% static 'images/csg2.jpg' %}" width="250px" height="338.538px" alt="">
+    </div>
+    <div class="summer-escapebox">
+        <img src="{% static 'images/csg3.jpg' %}" width="250px" height="338.538px" alt="">
+    </div>
+    <div class="summer-escapebox">
+        <img src="{% static 'images/csg4.jpg' %}" width="250px" height="338.538px" alt="">
+    </div>
+    <div class="summer-escapebox">
+        <img src="{% static 'images/csg5.jpg' %}" width="250px" height="338.538px" alt="">
+    </div>
+    <div class="summer-escapebox">
+        <img src="{% static 'images/csg6.jpg' %}" width="250px" height="338.538px" alt="">
+    </div>
+    <div class="summer-escapebox">
+        <img src="{% static 'images/csg7.jpg' %}" width="250px" height="338.538px" alt="">
+    </div>
+</div>
+</div>
+
+<br>
+<div class="train-wrapper2">
+<div class="summer-escapeboxholder2">
+    <div class="summer-escapebox2">
+        <img src="{% static 'images/csg1.jpg' %}" width="250px" height="338.538px" alt="">
+    </div>
+    <div class="summer-escapebox">
+        <img src="{% static 'images/csg2.jpg' %}" width="250px" height="338.538px" alt="">
+    </div>
+    <div class="summer-escapebox">
+        <img src="{% static 'images/csg3.jpg' %}" width="250px" height="338.538px" alt="">
+    </div>
+    <div class="summer-escapebox">
+        <img src="{% static 'images/csg4.jpg' %}" width="250px" height="338.538px" alt="">
+    </div>
+    <div class="summer-escapebox">
+        <img src="{% static 'images/csg5.jpg' %}" width="250px" height="338.538px" alt="">
+    </div>
+    <div class="summer-escapebox">
+        <img src="{% static 'images/csg6.jpg' %}" width="250px" height="338.538px" alt="">
+    </div>
+    <div class="summer-escapebox">
+        <img src="{% static 'images/csg7.jpg' %}" width="250px" height="338.538px" alt="">
+    </div>
+    <div class="summer-escapebox">
+        <img src="{% static 'images/csg1.jpg' %}" width="250px" height="338.538px" alt="">
+    </div>
+    <div class="summer-escapebox">
+        <img src="{% static 'images/csg2.jpg' %}" width="250px" height="338.538px" alt="">
+    </div>
+    <div class="summer-escapebox">
+        <img src="{% static 'images/csg3.jpg' %}" width="250px" height="338.538px" alt="">
+    </div>
+    <div class="summer-escapebox">
+        <img src="{% static 'images/csg4.jpg' %}" width="250px" height="338.538px" alt="">
+    </div>
+    <div class="summer-escapebox">
+        <img src="{% static 'images/csg5.jpg' %}" width="250px" height="338.538px" alt="">
+    </div>
+    <div class="summer-escapebox">
+        <img src="{% static 'images/csg6.jpg' %}" width="250px" height="338.538px" alt="">
+    </div>
+    <div class="summer-escapebox">
+        <img src="{% static 'images/csg7.jpg' %}" width="250px" height="338.538px" alt="">
+    </div>
+</div>
+</div>
+
+{% endblock content %} 
+
+<!-- Javascript link -->
+{% block js %}
+{{ block.super }}
+<script src="#"></script>
+{% endblock js %}

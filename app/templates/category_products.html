@@ -1,0 +1,41 @@
+{% load static %}
+
+{% block title %}
+<title>Category Products</title>
+{% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/category_products.css' %}">
+{% endblock css %} 
+
+<h2 class="category-title">{{ category.name }} Products</h2>
+
+<div class="products-grid">
+    {% for i in products %}
+    <a href="{% url 'product_detail' i.id %}" class="product-link">
+    <div class="product-card">
+
+        <img src="{{ i.main_image.url }}" class="product-img" alt="">
+
+        <div class="product-info">
+            <p class="product-name">{{ i.name }}</p>
+
+            <div class="price-box">
+                <span class="price">₹ {{ i.price }}</span>
+                <del class="old-price">₹ {{ i.old_price }}</del>
+            </div>
+
+            <div class="sizes-box">
+                {% for s in i.productsize_set.all %}
+                    {% if s.stock > 0 %}
+                        <span class="size">{{ s.size }}</span>
+                    {% endif %}
+                {% endfor %}
+            </div>
+
+        </div>
+
+    </div>
+    </a>
+    {% endfor %}
+</div>

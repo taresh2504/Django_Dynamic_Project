@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+<title>Fit guide</title>
+{% endblock title %}
+
+{% block css %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'css/fitguide.css' %}">
+{% endblock css %}
+
+{% block content %}
+<br>
+<br>
+<h1 class="title">Fabric And Fit Guide</h1>
+<br>
+<div class="content-block">
+    <p class="content1">We’re here to help you reserve your best fit! Our customer support team is available from <strong>10:00 AM to 6:00 PM (IST), Monday to Saturday.</strong> </p>
+
+    <p class="content1">If you have any queries with regards to the fit and fabric you can reach us at <strong>support@overlaysclothing.com</strong> </p>
+
+    <p class="content1">You can also use WhatsApp at the right bottom corner of the website!</p>
+
+    <p class="content1">We'll get back to you as soon as possible!</p>
+</div>
+
+
+{% endblock content %} 

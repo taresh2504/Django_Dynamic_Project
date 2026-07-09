@@ -1,0 +1,41 @@
+.heading{
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    font-family: Assistant,sans-serif;
+    color: rgba(0, 0, 0, 0.81);
+}
+
+.policy-bodybox{
+    border: 1px solid none;
+    width: 324px;
+    height: 5577.400px;
+    margin-left: 576.8px;
+}
+
+.policy-box1{
+    border: 1px solid none;
+    height: 140px;
+    width: 324px;
+}
+
+.policy-content{
+    text-align: left;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    font-family: Assistant,sans-serif;
+    color: rgba(0, 0, 0, 0.81);
+}
+
+.policy-content2{
+    /* height: auto;
+    width: auto; */
+    text-align: left;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    font-family: Assistant,sans-serif;
+    color: rgba(0, 0, 0, 0.81);
+}

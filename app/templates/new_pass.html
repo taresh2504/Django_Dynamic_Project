@@ -1,0 +1,28 @@
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/new_pass.css' %}">
+{% endblock css %}
+
+{% block content %}
+
+
+
+<form action="{% url 'reset' %}" method="post">
+    {% csrf_token %}
+    <h1>Change password</h1>
+    <br>
+    Enter OTP: 
+    <input type="number" name="otp" id="">
+    <br>
+    {{msg1}}
+    New Password :
+    <input type="password" name="password" id="">
+    <br>
+    Confirm New Password:
+    <input type="password" name="cpassword" id="">
+    <br>
+    <button type="submit">Reset</button>
+</form>
+
+{% endblock content %}

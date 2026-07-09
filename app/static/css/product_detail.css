@@ -1,0 +1,305 @@
+.main-box{
+    border: 1px solid black;
+    width: 100%;
+    height: 1500.12px;
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.image-box{
+    border: 1px solid none;
+    width: 970.662px;
+    height: 1500px;
+    margin-top: 5px;
+    margin-left: -60px;
+}
+
+.empty-gap{
+    margin-top: 5px;
+}
+
+
+/* .image-list{
+    list-style: none;
+    display: grid;
+    column-gap: 4px;
+    row-gap: 4px;
+    grid-template-columns:455.325px 455.337px; 
+    margin-left: -21px;
+
+}
+
+.list-image{
+    border: 1px solid none;
+    width:465.200px;
+    height: 649.600px;
+    max-height: 649.6px;
+    aspect-ratio:0.666667 / 1;
+} */
+
+.image-list{
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* auto adjust */
+    gap: 10px;
+    padding: 0;
+}
+
+.list-image{
+    width: 100%;
+    aspect-ratio: 2/3;
+}
+
+/* .image{
+    object-fit: contain;
+    object-position: 50% 50%;
+    aspect-ratio:0.666667 / 1;
+} */
+
+.image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /* ya contain agar full dikhani ho */
+    border-radius: 10px;
+}
+
+.clothes-infobox{
+    border: 1px solid none;
+    width: 455.200px;
+    height: 1500px;
+    margin-top: 5px;
+}
+
+.itemname-container{
+    border: 0.5px solid none;
+    width: 455.200px;
+    height: 73.200px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.price-container{
+    text-align: right;
+}
+
+.dress-name{
+    font-size: 16px;
+    font-family: Assistant,sans-serif;
+    color: rgba(0, 0, 0, 0.81);
+    font-weight: 700;
+    font-style: normal;
+}
+
+.dressold-price{
+    font-size: 16px;
+    font-family: Assistant,sans-serif;
+    color: grey;
+    font-weight: 400;
+    font-style: normal;
+    text-align: right;
+}
+
+.all-taxes{
+    font-size: 16px;
+    font-family: Assistant,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+.rating{
+    font-size: 12px;
+    font-family: Assistant,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    display: block;
+    margin-top: -15px;
+    margin-left: 23px;
+}
+
+.size-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.size-name{
+    font-size: 12px;
+    font-family: Assistant,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.size-chart{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13.3333px;
+    font-weight: 400;
+    font-style: normal;
+    color: black;
+    text-decoration-color: rgb(0, 0, 0);
+}
+
+.sizebutton-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* gap: 5px; */
+}
+
+.size-button{
+    border: 1px solid gray;
+    height: 32.800px;
+    width: 64.925px;
+    font-size: 12px;
+    font-family: Assistant,sans-serif;
+    border-radius: 12px;
+    background-color: white;
+}
+
+.size-button:hover{
+    background-color: lightgray;
+}
+
+/* .size-button:checked{
+    background-color: black;
+    color: white;
+} */
+
+.selecting-size{
+    border: 1px solid rgb(255, 112, 0);
+    height: 52.400px;
+    width: 455.200px;
+    border-radius: 15px;
+    background-color: rgb(255, 112, 0);
+    color: white;
+    font-size: 12px;
+    font-family: Assistant,sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+.selecting-size:hover{
+    background-color: white;
+    color: black;
+}
+
+
+.return-line{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.tick-button{
+    border: 1px solid black;
+    height: 20px;
+    width: 20px;
+}
+
+.returnline-title{
+    font-size: 12px;
+    font-family: Assistant,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.round-i{
+    border: 1px solid black;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+}
+
+.i{
+    font-size: 12px;
+    text-align: center;
+    font-family: Assistant,sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    border: 1px solid grey;
+    height: 17px;
+    width: 17px;
+    border-radius: 50%;
+    /* margin-left: 4px;
+    margin-top: -25px; */
+}
+
+.size-chart{
+    font-size: 12px;
+    font-family: Assistant,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: rgba(0, 0, 0, 0.81);
+}
+
+.sizechart-image{
+    width: 280px;
+    height: 401.712px;
+    text-align: left;
+}
+
+.product-desc{
+    font-size: 12px;
+    font-family: Assistant,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: rgba(0, 0, 0, 0.81);
+}
+
+.product-desc2{
+    font-size: 12px;
+    font-family: Assistant,sans-serif;
+}
+
+.uservisit-box{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.user-visit{
+    border: 1px solid none;
+    height: 69.6px;
+    width: 280px;
+    margin-top: 27px;
+}
+
+.customers-photo{
+    margin-left: 124px;
+}
+
+.customer-content{
+    font-size: 12px;
+    font-family: Assistant,sans-serif;
+    color: rgba(0, 0, 0, 0.81);
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+}
+
+.tested-by{
+    font-size: 32px;
+    font-family: Assistant,sans-serif;
+    color: rgba(0, 0, 0, 0.81);
+    font-style: normal;
+    font-weight: 700;
+    text-align: center;
+}
+
+.container{
+    text-align: center;
+}
+
+.testing-companies{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.size-button.active{
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+}

@@ -1,0 +1,222 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    {% endblock title %}
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    {% block favicon %}
+    <link rel="shortcut icon" href="{% static 'images/logo4.jpg' %}" type="image/x-icon">
+    {% endblock favicon %} 
+    
+    {% block css %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% endblock css %}
+
+    {% block icons %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    {% endblock icons %}
+
+</head>
+<body>
+    <div class="main-container">
+        <div class="navbar-container">
+            <div class="nav-logoholder">
+                <div class="navbar-holder">
+                    <div><a class="list" href="{% url 'shopbycategory' %}">Shop By Category</a></div>
+                    <div><a class="list" href="{% url 'shopbycollection' %}">Shop By Collection</a></div>
+                    <div><a class="list" href="{% url 'aboutus' %}">About Us</a></div>
+                    <div><a class="list" href="{% url 'policy' %}">Policy</a></div>
+                    <div><a class="list" href="{% url 'fitguide' %}">Fit Guide</a></div>
+                </div>
+
+                <div class="nav-logo">
+                    <img src="{% static 'images/logo4.jpg' %}" class="logo" alt="logo">
+                </div>
+            </div>
+
+            <div class="icon-box {% if bag %}hide-icons{% endif %}">
+            <a href="{% url 'search' %}"><div><img class="icon" id="search-logo" src="{% static 'images/SearchIconLogoImage.png' %}" alt="search-icon"></div></a>
+            {% if info %}
+                <a href="{% url 'userprofile' pk=info.id %}"><div><img class="info-icon" src="{{ info.photo.url }}" alt="profile-icon"></div></a>
+            {% else %}
+                <a href="{% url 'account' %}"><div><img class="icon" src="{% static 'images/UserLogoImage.png' %}" alt="profile-icon"></div></a>
+            {% endif %}
+            <a href="{% url 'cart_page' %}"><div><img class="icon" src="{% static 'images/BagLogoImage.png' %}" alt="bag-logo"></div></a>            
+            {% comment %} <a href="{% url 'cartpay' %}"><div><img class="icon" src="{% static 'images/BagLogoImage.png' %}" alt="bag-logo"></div></a> {% endcomment %}
+            </div>
+        </div>
+
+    <!-- Train Offer -->
+    <div class="offer-bar">
+        <div class="offer-track">
+            <div class="offer-content">
+                <span>Get Flat ₹100 OFF on ₹999+ orders | INSTANT100</span>
+                <span class="offer-dot">.</span>
+                <span>1,50,000+ Happy Customers</span>
+                <span class="offer-dot">.</span>
+            </div>
+
+        <!-- duplicate same content -->
+            <div class="offer-content">
+                <span>Get Flat ₹100 OFF on ₹999+ orders | INSTANT100</span>
+                <span class="offer-dot">.</span>
+                <span>1,50,000+ Happy Customers</span>
+                <span class="offer-dot">.</span>
+            </div>
+
+        <!-- duplicate same content 2 -->
+            <div class="offer-content">
+                <span>Get Flat ₹100 OFF on ₹999+ orders | INSTANT100</span>
+                <span class="offer-dot">.</span>
+                <span>1,50,000+ Happy Customers</span>
+                <span class="offer-dot">.</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Account Box -->
+    {% if account %}
+    <br>
+     <div class="account-box">
+        <br>
+        <div class="account-crossholder">
+        <span class="account-name">Account</span> <a href="{% url 'landing' %}" class="crossmark-tag"><i class="fa-solid fa-xmark fa-2xs" id="cartcross-mark2" style="color: rgb(74, 77, 83);"></i></a>
+        </div>
+        <br>
+        <div class="shop-signupbox">
+            <a href="{% url 'login' %}" class="shop-signup">Login</a>
+        </div>
+        <br>
+        <div class="other-signupbox">
+            <a href="{% url 'signup' %}" class="other-signup">Signup</a>
+        </div>
+        <br>
+        <!-- <div class="account-lastbox">
+            <div class="account-order-box"><img src="{% static 'images/orderboxlogo.png' %}" class="order-logo" alt="">&nbsp;<span class="account-orders">Orders</span></div>
+            <div class="account-order-box"><img src="{% static 'images/UserLogoImage.png' %}" class="profile-logo" alt="">&nbsp;<span class="account-profile">Profile</span></div>
+        </div> -->
+     </div>
+    
+    {% comment %} {% elif bag %} {% endcomment %}
+    {% comment %} {% elif cartpay %} {% endcomment %}
+    <!-- Cart Box  -->
+
+    {% comment %} <div class="cartmain-box">
+        <a href="{% url 'landing' %}" class="crossmark-tag"><i class="fa-solid fa-xmark fa-2xs" id="cartcross-mark" style="color: rgb(74, 77, 83);"></i></a>
+        <div class="empty-cart">Your cart is empty</div>
+        <br>
+        <div class="secondcart-box">
+            <br>
+            <span class="cartbox-login">Have an account? <a href="" class="cartbox-mainlogin">Log in</a>&nbsp; to check out faster</span>
+            <br>
+            <button type="submit" class="cartbox-shoppingbutton">Continue shopping</button>
+        </div>
+    </div> {% endcomment %}
+    {% endif %}
+
+    {% block content %}
+
+    {% endblock content %} 
+
+
+
+    <!-- Footer Begins -->
+    <div class="footermain-box">
+        <div class="footersecond-box">
+            <hr>
+            <span class="footer-overlays">OVERLAYS</span>
+            <br>
+            <strong class="footer-heading">JOIN THE COMMUNITY OF CHANGE MAKERS</strong>
+            <span class="footer-subheading">get exclusive deals and early access to new products.</span>
+            <br>
+            <div class="footeremail-box">
+                <input type="search" name="" placeholder="Email address" class="footer-search" id=""><span class="footer-arrow"><i class="fa-solid fa-arrow-right-long fa-2xs" style="color: rgb(74, 77, 83);"></i></span>
+            </div> 
+            <br>
+            <br>
+
+        <div class="footer-flexbox">    
+            <div>
+                <header>
+                    <nav>
+                        <ul class="footerend-headingA">
+                            <li><strong class="headline">TOP CATEGORIES</strong></li>
+                            <li><a href="" class="relax-fit">Relaxed Fit</a></li>
+                            <li><a href="" class="relax-fit">Oversized T-shirt</a></li>
+                            <li><a href="" class="relax-fit">Super Essential</a></li>
+                            <li><a href="" class="relax-fit">Joggers</a></li>
+                            <li><a href="" class="relax-fit">Cargos</a></li>
+                            <li><a href="" class="relax-fit">Shorts</a></li>
+                            <li><a href="" class="relax-fit">Sleeveless</a></li>
+                            <li><a href="" class="relax-fit">Polo</a></li>
+                            <li><a href="" class="relax-fit">Jacket & Winter</a></li>
+                        </ul>
+                    </nav>
+                </header>
+            </div>
+
+            <div>
+                <header>
+                    <nav>
+                        <ul class="footerend-headingA">
+                            <li><strong class="headline">BEST SELLER</strong></li> 
+                            <li><a href="" class="relax-fit">Miler faux leather jacket</a></li>
+                            <li><a href="" class="relax-fit">Liberation Beige Oversized Hoodie</a></li>
+                            <li><a href="" class="relax-fit">Ocean Claw Oversized Hoodie</a></li>
+                            <li><a href="" class="relax-fit">White Spirit Wings T-Shirt</a></li>
+                            <li><a href="" class="relax-fit">Cloud Nine Oversized Hoodie</a></li>
+                            <li><a href="" class="relax-fit">Glory Arc Relaxed Fit T-Shirt -100% Cotton</a></li>
+                            <li><a href="" class="relax-fit">Sky Walker Black Oversized T-Shirt</a></li>
+                            <li><a href="" class="relax-fit">Blazing Wild Relaxed Fit T-Shirt</a></li>
+                        </ul>
+                    </nav>
+                </header>
+            </div>
+
+            <div>
+                <header>
+                    <nav>
+                        <ul class="footerend-headingA">
+                            <li><strong class="headline">COMPANY</strong></li> 
+                            <li><a href="" class="relax-fit">Home Page</a></li>
+                            <li><a href="" class="relax-fit">Contact Us</a></li>
+                            <li><a href="" class="relax-fit">Login</a></li>
+                            <li><a href="" class="relax-fit">Track My Order</a></li>
+                        </ul>
+                    </nav>
+                </header>
+            </div>
+
+            <div>
+                <header>
+                    <nav>
+                        <ul class="footerend-headingA">
+                            <li><strong class="headline">POLICIES</strong></li> 
+                            <li><a href="" class="relax-fit">Return Your Order</a></li>
+                            <li><a href="" class="relax-fit">Shipping Policy</a></li>
+                            <li><a href="" class="relax-fit">Return,Refund and Cancellation</a></li>
+                            <li><a href="" class="relax-fit">Terms and Conditions</a></li>
+                            <li><a href="" class="relax-fit">Privacy Policy</a></li>
+                            <li><a href="" class="relax-fit">Contact Us</a></li>
+                        </ul>
+                    </nav>
+                </header>
+            </div>
+        </div>    
+    </div>
+</div>
+    
+    <!-- Javascript link -->
+    {% block js %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'js/base.js' %}"></script>
+    {% endblock js %}

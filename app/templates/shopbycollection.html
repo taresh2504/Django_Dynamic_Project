@@ -1,0 +1,145 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+<title>Shop by Collection</title>
+{% endblock title %} 
+
+{% block css %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'css/shopbycollection.css' %}">
+{% endblock css %}
+
+{% block content %}
+<div class="mainbox">
+
+<br>
+
+<!-- ================= JOGGERS ================= -->
+<h2 class="section-title">Joggers</h2>
+
+{% if joggers %}
+<div class="newlaunch-itemsbox">
+    {% for i in joggers %}
+
+<div class="newlaunch-items"
+     onclick="window.location.href='{% url 'product_detail' i.id %}'"
+     style="cursor:pointer;">
+
+    <img src="{{ i.main_image.url }}" class="product-img" alt="">
+
+    <span class="greytshirt-title">{{ i.name }}</span>
+
+    <div>
+        <span class="prizes">
+            <span class="price">₹ {{ i.price }}</span>
+            &nbsp;
+            <del class="cut-price">₹ {{ i.old_price }}</del>
+        </span>
+    </div>
+
+    <div class="product-variants">
+        {% for s in i.productsize_set.all %}
+            {% if s.stock > 0 %}
+                <span class="variant-size">{{ s.size }}</span>
+            {% endif %}
+        {% empty %}
+            <span>No sizes available</span>
+        {% endfor %}
+    </div>
+
+</div>
+
+{% endfor %}
+</div>
+{% endif %}
+
+<hr>
+
+<!-- ================= JACKETS ================= -->
+<h2 class="section-title">Jackets</h2>
+
+{% if oversizetshirt %}
+<div class="newlaunch-itemsbox">
+    {% for i in oversizetshirt %}
+    <div class="newlaunch-items"
+     onclick="window.location.href='{% url 'product_detail' i.id %}'"
+     style="cursor:pointer;">
+
+        <img src="{{ i.main_image.url }}" class="product-img" alt="">
+        <span class="greytshirt-title">{{ i.name }}</span>
+
+        <div>
+            <span class="prizes">
+                <span class="price">₹ {{ i.price }}</span>
+                &nbsp;
+                <del class="cut-price">₹ {{ i.old_price }}</del>
+            </span>
+        </div>
+
+        <div class="product-variants">
+            {% for s in i.productsize_set.all %}
+                {% if s.stock > 0 %}
+                    <a href="" class="variant-size">
+                        <span class="sizes">{{ s.size }}</span>
+                    </a>
+                {% endif %}
+            {% empty %}
+                <span>No sizes available</span>
+            {% endfor %}
+        </div>
+
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+<hr>
+
+<!-- ================= HOODIES ================= -->
+<h2 class="section-title">Hoodies</h2>
+
+{% if hoodies %}
+<div class="newlaunch-itemsbox">
+    {% for i in hoodies %}
+    <div class="newlaunch-items"
+     onclick="window.location.href='{% url 'product_detail' i.id %}'"
+     style="cursor:pointer;">
+
+        <img src="{{ i.main_image.url }}" class="product-img" alt="">
+        <span class="greytshirt-title">{{ i.name }}</span>
+
+        <div>
+            <span class="prizes">
+                <span class="price">₹ {{ i.price }}</span>
+                &nbsp;
+                <del class="cut-price">₹ {{ i.old_price }}</del>
+            </span>
+        </div>
+
+        <div class="product-variants">
+            {% for s in i.productsize_set.all %}
+                {% if s.stock > 0 %}
+                    <a href="" class="variant-size">
+                        <span class="sizes">{{ s.size }}</span>
+                    </a>
+                {% endif %}
+            {% empty %}
+                <span>No sizes available</span>
+            {% endfor %}
+        </div>
+
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+</div>
+{% endblock content %} 
+
+<!-- Javascript link -->
+{% block js %} 
+{{ block.super }}
+<script src="{% static 'js/shopbycategory.js' %}"></script>
+{% endblock js %}

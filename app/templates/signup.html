@@ -1,0 +1,53 @@
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/signup.css' %}">
+{% endblock css %}
+
+{% block title %}
+<title>Sign-up</title>
+{% endblock title %} 
+
+{% block content %}
+<div class="main-box">
+    <div class="signup-box">
+        <p class="overlays-title">Overlays</p>
+        <h1 class="signup-title">Sign in</h1>
+        <div>
+            <p class="signup-line">Sign in or create an account</p>
+        </div>
+<form method="post" action="{% url 'signupdata' %}" enctype="multipart/form-data" class="form-box">
+    {% csrf_token %}
+
+    {{ form.username }}<br><br>
+    <span class="error-box">{{ form.username.errors }}</span>
+
+    {{ form.email }}<br><br>
+    <span class="error-box">{{ form.email.errors }}</span>
+
+    {{ form.contact }}<br><br>
+    <span class="error-box">{{ form.contact.errors }}</span>
+
+    {{ form.address }}<br><br>
+    <span class="error-box">{{ form.address.errors }}</span>
+
+    {{ form.photo }}<br><br>
+    <span class="error-box">{{ form.photo.errors }}</span>
+
+    {{ form.password }}<br><br>
+    <span class="error-box">{{ form.password.errors }}</span>
+
+    {{ form.confirm_password }}<br><br>
+    <span class="error-box">{{ form.confirm_password.errors }}</span>   <!-- ✅ ye add kar -->
+
+    <input type="submit" class="register-button" value="Register">
+</form>
+
+<div class="signup-loginbox">
+        <p>Already a user? <a href="{% url 'login' %}">Login</a> </p>
+    </div>
+
+    </div>
+</div>
+
+{% endblock content %}

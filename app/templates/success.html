@@ -1,0 +1,15 @@
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/success.css' %}">
+{% endblock css %} 
+
+{% block content %}
+<h1 class="success-msg">Payment succes</h1>
+
+<form action="{% url 'landing' %}" method="post">
+    {% csrf_token %}
+    <button type="submit">Go to Home Page</button>
+</form>
+{% endblock content %} 
+

@@ -1,0 +1,516 @@
+.navbar-container{
+    border: 0.5px solid none;
+    height: 72px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 550px;
+}
+
+.nav-logoholder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 121px;
+}
+
+.navbar-holder{
+    border: 0.5px solid none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.list{
+    text-decoration: none;
+    font-family: Assistant,sans-serif;
+    color: rgba(0, 0, 0, 0.7);
+    height: 30.075px;
+    width: 136px;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    text-transform: none;
+    /* text-underline-offset: 2.25px;
+    line-height: 30.0857px; */
+    /* text-wrap-mode: nowrap; */
+}
+
+.nav-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-left: -50px; */
+    /* margin-top: -5%;   yahi gap de raha hai */
+}
+
+.logo{
+    width: 75px;
+    height: 110px;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+.icon-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    position: relative;
+    /* z-index: 9999; */
+}
+
+.hide-icons{
+    /* display: none !important; */
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.info-icon{
+    display: block;
+    cursor: pointer;
+    border: 0.5px solid black;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+}
+
+.icon{
+    display: block;
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+}
+
+.offer-bar {
+    margin-top: 4px;
+    height: 23.6px;
+    width: 100%;
+    background-color: #fb8930;
+    color: white;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.offer-track {
+    display: flex;
+    width: max-content;
+    animation: scroll 5s linear infinite;
+}
+
+.offer-content {
+    display: flex;
+    white-space: nowrap;
+    padding-top: 2.5px;
+}
+
+.offer-dot{
+    display: block;
+    font-size: 14px;
+    font-weight: bolder;
+    /* font-weight: 500; */
+    /* padding-top: -12px; */
+    margin-top: -4px;
+    color: lightgray;
+}
+
+.offer-content span {
+    margin-right: 60px;
+    font-size: 14px;
+    font-family: Assistant, sans-serif;
+}
+
+/* 🔥 magic animation */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-20%);
+    }
+}
+
+
+/* Footer css begin */
+.footermain-box{
+    border: 1px solid black;
+    height: 824.812px;
+    width: 100%;
+    margin-top: 300px;
+    background-color: lightgray;
+}
+
+.footersecond-box{
+    border: 1px solid none;
+    height: 824.812px;
+    width: 1408px;
+    margin-left: 40px;
+    margin-top: 12px;
+}
+
+.footer-overlays{
+    display: block;
+    color: black;
+    font-family: Assistant, sans-serif;
+    font-size: 308.288px;
+    font-style: normal;
+    font-weight: 400;
+    height: 369.938px;
+    width: 211.65px;
+    letter-spacing: 9.24865px;
+    text-align: left;
+    margin-top: -45px;
+}
+
+.footer-heading{
+    display: block;
+    color: black;
+    font-family: Assistant, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    text-align: center;
+}
+
+.footer-subheading{
+    display: block;
+    color: rgba(0, 0, 0, 0.81);
+    font-family: Assistant, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+}
+
+.footeremail-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footeremail-box input{
+    font-size: 12px;
+    font-style: normal;
+    font-family: Assistant, sans-serif;
+    font-weight: 400;
+    letter-spacing: normal;
+    padding-left: 28px;
+    color: rgba(0, 0, 0, 0.53);
+    background-color: lightgray;
+}
+
+.footer-search{
+    border: 1px solid black;
+    height: 50.4px;
+    width: 704px;
+    border-radius: 39px;
+    border-color: rgba(0, 0, 0, 0.13);
+    color: rgba(0, 0, 0, 0.53);
+    font-family: Assistant, sans-serif;
+    cursor: text;
+    display: block;
+    text-align: start;
+}
+
+.footer-arrow{
+    display: block;
+    cursor: default;
+    font-size: 15px;
+    font-family: Assistant, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    /* height: 32.4px;
+    width: 32.4px; */
+    margin-top: -35px;
+    margin-left: 650px;
+}
+
+.footerend-heading{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 240px;
+    list-style: none;
+    font-family: Assistant, sans-serif;
+    font-style: normal;
+    font-size: 16px;
+}
+
+.headline{
+    font-size: 16px;
+}
+
+.footerend-headingA{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 10px;
+    list-style: none;
+    font-family: Assistant, sans-serif;
+    font-style: normal;
+    font-size: 12px;
+    font-weight: 400;
+    /* margin-right: 40px; */
+}
+
+.relax-fit{
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.81);
+}
+
+.footer-flexbox{
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    /* gap: 60px; */
+}
+
+.account-crossholder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 220px;
+}
+
+#cartcross-mark2{
+    display: block;
+    /* margin-left: 362px; */
+    /* margin-top: 18px; */
+    font-size: 17px;
+    
+}
+
+.account-box{
+    position: fixed;      /* overlay */
+    top: 84px;            /* navbar ke niche */
+    left: 4px;         /* icon ke niche */
+    
+    height: 200.8px;
+    width: 352px;
+    border-radius: 14px;
+    background: white;
+    border: 1px solid black;
+
+    z-index: 9999;        /* train se upar */
+}
+
+.account-name{
+    display: block;
+}
+
+.account-box .account-name{
+    font-size: 18px;
+    font-weight: 400;
+    font-style: normal;
+    font-family: Assistant,sans-serif;
+    color: rgba(0, 0, 0, 0.81);
+    /* margin-left: 30px; */
+    /* padding-top: 50px; */
+}
+
+.shop-signupbox{
+    border: 1px solid black;
+    height: 44px;
+    width: 139.4px;
+    border-radius: 15px;
+    /* background-color: blue; */
+    background-color: rgb(84, 51, 235);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 106.2px;
+    cursor: pointer;
+    margin-top: -15px;
+}
+
+.shop-signup{
+    font-size: 12px;
+    font-weight: 500;
+    font-family: Assistant,sans-serif;
+    /* font-family: GTStandard-M, sans-serif; */
+    color: white;
+    text-decoration: none;
+}
+
+.other-signupbox{
+    border: 1px solid black;
+    height: 44px;
+    width: 306px;
+    border-radius: 15px;
+    /* background-color: blue; */
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 23px;
+    cursor: pointer;
+    margin-top: -15px;
+}
+
+.other-signup{
+    font-size: 12px;
+    font-weight: 500;
+    font-family: Assistant,sans-serif;
+    /* font-family: GTStandard-M, sans-serif; */
+    color: white;
+    text-decoration: none;
+}
+
+.account-order-box{
+    border: 1px solid white;
+    border-radius: 15px;
+    height: 44px;
+    width: 147.4px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.account-lastbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.order-logo{
+    height: 20px;
+    width: 20px;
+}
+
+.profile-logo{
+    height: 17px;
+    width: 17px;
+}
+
+.account-orders{
+    font-size: 12px;
+    font-weight: 500;
+    font-family: Assistant,sans-serif;
+    color: black;
+    text-decoration: none;
+}
+
+.account-profile{
+    font-size: 12px;
+    font-weight: 500;
+    font-family: Assistant,sans-serif;
+    color: black;
+    text-decoration: none;
+}
+
+.account-order-box:hover{
+    background-color: lightgray;
+}
+
+/* .account-box{
+    display: block;
+} */
+
+/* .cartmain-box{
+    border: 1px solid black;
+    border-top-right-radius: 11px;
+    border-bottom-right-radius: 11px;
+    width: 400px;
+    height: 100vh;
+    margin-left: 1100px;
+    margin-top: -110px;
+    z-index: 10000; 
+} */
+
+.cartmain-box{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 400px;
+    height: 100vh;
+    background: white;
+    z-index: 10000;
+    overflow: hidden;
+    border-top-left-radius: 11px;
+    border-bottom-left-radius: 11px;
+}
+
+.cartmain-box{
+    display: block;
+}
+
+/* .hide-icons{
+    display: none;
+} */
+
+.crossmark-tag{
+    text-decoration: none;
+}
+
+#cartcross-mark{
+    display: block;
+    margin-left: 362px;
+    margin-top: 18px;
+    font-size: 17px;
+    
+}
+
+.empty-cart{
+    margin-top: 210px;
+    font-family: Assistant,sans-serif;
+    /* color: black; */
+    color: rgba(0, 0, 0, 0.81);
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.secondcart-box{
+    border: 1px solid gray;
+    border-radius: 10px;
+    height: 117.200px;
+    width: 380px;
+    margin-left: 10px;
+}
+
+.cartbox-login{
+    font-family: Assistant,sans-serif;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.81);
+    font-weight: 400;
+    font-style: normal;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+}
+
+.cartbox-mainlogin{
+    font-family: Assistant,sans-serif;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.81);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.cartbox-shoppingbutton{
+    margin-top: -3px;
+    border: 1px solid lightgray;
+    border-radius: 14px;
+    cursor: pointer;
+    height: 44px;
+    width: 157.6px;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    background-color: black;
+    color: white;
+    font-family: Assistant,sans-serif;
+    margin-left: 111.2px;
+}
+

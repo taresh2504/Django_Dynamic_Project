@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+{{ block.super }} 
+<link rel="stylesheet" href="{% static 'css/cartpay.css' %}"> 
+{% endblock css %} 
+
+{% block content %}
+
+<div class="cartmain-box">
+
+    <div class="cart-container">
+
+        <!-- HEADER -->
+        <div class="cart-holder">
+            <strong class="cart-name">Your Cart</strong>
+            <a href="{% url 'landing' %}">
+                <i class="fa-solid fa-xmark" id="cross-mark"></i>
+            </a>
+        </div> 
+
+        <!-- TOP LINE -->
+        <div class="cartbox-headline">
+            <p class="headline">Loved by 150,000+ customers💖</p>
+        </div>
+
+        <!-- CART ITEMS LIST -->
+        <div class="secondcart-box">
+
+            {% for item in cart %}
+            <div class="inside-box">
+
+                <img src="{{ item.image }}" class="cart-img">
+
+                <div class="photo-desc">
+                    <span class="photo-descname">{{ item.name }}</span>
+                    <span class="photo-descsize">Size: {{ item.size }}</span>
+                </div>
+
+                <div class="price-box">
+                    <div class="cart-price">₹ {{ item.price }}</div>
+                </div>
+
+                <!-- DELETE -->
+                <form action="{% url 'remove_from_cart' %}" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="id" value="{{ item.id }}">
+                    <input type="hidden" name="size" value="{{ item.size }}">
+                    <button class="delete-btn">🗑️</button>
+                </form>
+
+            </div>
+            {% empty %}
+            <p class="empty-cart">Your cart is empty</p>
+            {% endfor %}
+
+        </div>
+
+        <!-- PAYMENT SECTION (ONLY ONE PRODUCT - SAFE FLOW) -->
+        <div class="bottom-box">
+
+            <div class="total-block">
+                <span>Subtotal</span> 
+                <span>₹ {{ total }}</span>
+            </div>
+
+            <!-- ✅ FINAL PAYMENT FORM -->
+            <form action="/pay_amount/" method="post">
+                {% csrf_token %}
+
+                <input type="hidden" name="product_id" value="{{ cart.0.id }}">
+                <input type="hidden" name="product_size" value="{{ cart.0.size }}">
+                <input type="hidden" name="product_price" value="{{ cart.0.price }}">
+                <input type="hidden" name="quantity" value="1">
+
+                <button type="submit" class="buy-button">
+                    PROCEED TO BUY
+                </button>
+            </form>
+
+            <div class="return-line">
+                ✓ 7 Days easy exchange & returns
+            </div>
+
+        </div>
+
+    </div>
+
+</div> 
+
+{% endblock content %}

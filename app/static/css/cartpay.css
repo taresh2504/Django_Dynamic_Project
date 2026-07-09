@@ -1,0 +1,168 @@
+body{
+    margin: 0;
+    background: #f5f5f5;
+    font-family: Assistant, sans-serif;
+}
+
+/* MAIN CENTER */
+.cartmain-box{
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding: 40px 0;
+}
+
+.delete-btn{
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.delete-btn:hover{
+    color: red;
+}
+
+.cart-container{
+    width: 100%;
+    max-width: 700px;   /* thoda compact */
+    margin: 0 auto;     /* 👈 MOST IMPORTANT */
+    background: white;
+
+    border-radius: 14px;
+    padding: 20px;
+}
+
+/* HEADER */
+.cart-holder{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-name{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+#cross-mark{
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* TOP BAR */
+.cartbox-headline{
+    background: #eee;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+.headline{
+    text-align: center;
+    font-size: 13px;
+}
+
+/* PRODUCT LIST */
+.secondcart-box{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    max-height: 350px;      /* 👈 scroll area */
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+/* ITEM */
+.inside-box{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/* IMAGE */
+.cart-img{
+    width: 70px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* TEXT */
+.photo-desc{
+    flex: 1;
+}
+
+.photo-descname{
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.photo-descsize{
+    font-size: 12px;
+    color: gray;
+}
+
+/* PRICE */
+.price-box{
+    font-weight: 600;
+}
+
+/* EMPTY */
+.empty-cart{
+    text-align: center;
+    color: gray;
+}
+
+/* BOTTOM FIXED */
+.bottom-box{
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+/* TOTAL */
+.total-block{
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* BUTTON */
+.buy-button{
+    width: 100%;
+    height: 55px;
+    margin-top: 15px;
+
+    border: none;
+    border-radius: 12px;
+    background: rgb(255,112,0);
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.buy-button:hover{
+    background: black;
+}
+
+/* FOOTER */
+.return-line{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 12px;
+    color: gray;
+}

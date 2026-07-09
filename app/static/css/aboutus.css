@@ -1,0 +1,13 @@
+.main-box{
+    border: 1px solid black;
+    height: 100vh;
+    width: 100%;
+}
+
+.about-usheading{
+    text-align: center;
+}
+
+.aboutus-desc{
+    text-align: center;
+}
