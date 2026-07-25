@@ -267,6 +267,8 @@ def product_detail(req, id):
             'sizes': sizes,
             'info':user_data
         })
+    else:
+        return redirect('login')
 
 
 def cart_page(req):
