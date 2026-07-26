@@ -563,6 +563,15 @@ def delete_category(req, pk):
     else:
         return redirect('login')
 
+def show_users(req):
+    if 'a_data' in req.session:
+        user_id = req.session.get('a_data')
+        a_data = User.objects.get(id=user_id)
+        all_users = User.objects.all()
+        return render(req,'admindashboard.html',{'data':a_data ,'add_product':True,'all_users':all_users})
+    else:
+        return redirect('login')
+
 
 def add_product(req):
     if 'a_data' in req.session:

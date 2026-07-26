@@ -23,6 +23,7 @@ from app import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.landing,name='landing'),
+    path('show_users/',views.show_users,name='show_users'),
     path('shopbycategory/',views.shopbycategory,name='shopbycategory'),
     path('shopbycollection/',views.shopbycollection,name='shopbycollection'),
     path('aboutus/',views.aboutus,name='aboutus'),

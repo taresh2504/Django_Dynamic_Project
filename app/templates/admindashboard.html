@@ -40,6 +40,7 @@
     <div class="sidebar">
         <h3>Dashboard</h3>
 
+        <a href="{% url 'show_users' %}">Show Users</a>
         <a href="{% url 'add_category' %}">Add Category</a>
         <a href="{% url 'show_category' %}">Show Category</a>
 
@@ -61,7 +62,9 @@
             {% endfor %}
         {% endif %}
 
-        {% if add_category %}
+        {% if show_users %}
+            <!--  -->
+        {% elif add_category %}
 
 <div class="form-container">
     <form method="post" action="{% url 'save_category' %}" enctype="multipart/form-data" class="category-form">
