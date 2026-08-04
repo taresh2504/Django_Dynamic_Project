@@ -568,7 +568,7 @@ def show_users(req):
         user_id = req.session.get('a_data')
         a_data = User.objects.get(id=user_id)
         all_users = User.objects.all()
-        return render(req,'admindashboard.html',{'data':a_data ,'add_product':True,'all_users':all_users})
+        return render(req,'admindashboard.html',{'data':a_data ,'show_users':True,'all_users':all_users})
     else:
         return redirect('login')
 

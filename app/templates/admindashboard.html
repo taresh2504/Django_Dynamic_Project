@@ -63,7 +63,56 @@
         {% endif %}
 
         {% if show_users %}
-            <!--  -->
+            <div class="table-container">
+
+    <h2>All Users</h2>
+
+    <table class="category-table">
+
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Photo</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Contact No.</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            {% for i in all_users %}
+
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>
+                    {% if i.photo %}
+                        <img src="{{ i.photo.url }}" class="cat-img">
+                    {% else %}
+                        No Image
+                    {% endif %}
+                </td>
+                <td>{{ i.username }}</td>
+                <td>{{ i.email }}</td>
+                <td>{{ i.address }}</td>
+                <td>{{ i.contact }}</td>
+
+            </tr>
+
+            {% empty %}
+
+            <tr>
+                <td colspan="6">No Users Found</td>
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</div>
         {% elif add_category %}
 
 <div class="form-container">

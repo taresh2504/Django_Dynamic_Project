@@ -7,6 +7,7 @@
 
 body {
     height: 100vh;
+    /* height: 200vh; */
 }
 
 /* ===== TOP NAVBAR ===== */
@@ -72,6 +73,7 @@ body {
     background: #111;
     color: white;
     padding-top: 20px;
+    height: 550%;
 }
 
 .sidebar h3 {
@@ -96,7 +98,7 @@ body {
 /* ===== CONTENT ===== */
 .content {
     flex: 1;
-    background: #f5f5f5;
+    /* background: #f5f5f5; */
     padding: 25px;
 }
 
