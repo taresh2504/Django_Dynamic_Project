@@ -73,11 +73,35 @@
     gap: 0.5px;
 }
 
-.movement-box{
+
+.movement-box {
     border: 1px solid black;
     height: 465px;
     width: 100%;
     margin-top: 10px;
+    overflow: hidden;
+}
+
+.image-slider {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    z-index: 1;
+}
+
+.slide.active {
+    z-index: 2;
 }
 
 .uservisit-box{

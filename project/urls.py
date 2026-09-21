@@ -24,6 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.landing,name='landing'),
     path('show_users/',views.show_users,name='show_users'),
+    path('show_orders/',views.show_orders, name='show_orders'),
     path('shopbycategory/',views.shopbycategory,name='shopbycategory'),
     path('shopbycollection/',views.shopbycollection,name='shopbycollection'),
     path('aboutus/',views.aboutus,name='aboutus'),

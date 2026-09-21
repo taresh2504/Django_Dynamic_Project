@@ -28,22 +28,17 @@
 {% endif %}
  
 
+
 <div class="movement-box">
-  <div id="wavesCarousel" class="carousel slide" data-bs-ride="carousel">
 
-    <div class="carousel-inner">
+    <div class="image-slider">
 
-      <div class="carousel-item active" data-bs-interval="2000">
-        <img src="{% static 'images/waves.png' %}" class="d-block w-100" height="465px">
-      </div>
+        <img src="{% static 'images/waves.png' %}" class="slide active">
 
-      <div class="carousel-item" data-bs-interval="2000">
-        <img src="{% static 'images/rebellion.png' %}" class="d-block w-100" height="465px">
-      </div>
+        <img src="{% static 'images/rebellion.png' %}" class="slide"> 
 
     </div>
 
-  </div>
 </div>
 
 <!-- User Visit Box -->
@@ -184,21 +179,15 @@
 <br>
 <a href="">
 <div class="movement-box">
-  <div id="wavesCarousel" class="carousel slide" data-bs-ride="carousel">
 
-    <div class="carousel-inner">
+    <div class="image-slider">
 
-      <div class="carousel-item active" data-bs-interval="2000">
-        <img src="{% static 'images/unleashbeast.png' %}" class="d-block w-100" height="465px">
-      </div>
+        <img src="{% static 'images/unleashbeast.png' %}" class="slide active">
 
-      <div class="carousel-item" data-bs-interval="2000">
-        <img src="{% static 'images/builtforsummer.png' %}" class="d-block w-100" height="465px">
-      </div>
+        <img src="{% static 'images/builtforsummer.png' %}" class="slide">
 
     </div>
 
-  </div>
 </div>
 </a>
 
@@ -325,5 +314,5 @@
 <!-- Javascript link -->
 {% block js %}
 {{ block.super }}
-<script src="#"></script>
+<script src="{% static 'js/landing.js' %}"></script>
 {% endblock js %}

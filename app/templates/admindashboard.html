@@ -41,6 +41,7 @@
         <h3>Dashboard</h3>
 
         <a href="{% url 'show_users' %}">Show Users</a>
+        <a href="{% url 'show_orders' %}">Show Orders</a>
         <a href="{% url 'add_category' %}">Add Category</a>
         <a href="{% url 'show_category' %}">Show Category</a>
 
@@ -113,6 +114,85 @@
     </table>
 
 </div>
+
+        {% elif show_orders %}
+
+<div class="table-container">
+
+    <h2>All Orders</h2>
+
+    <table class="category-table">
+
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Order ID</th>
+                <th>User</th>
+                <th>Product</th>
+                <th>Size</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total Amount</th>
+                <th>Payment Status</th>
+                <th>Order Date</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            {% for i in all_orders %}
+
+            <tr>
+
+                <td>{{ forloop.counter }}</td>
+
+                <td>{{ i.order_id }}</td>
+
+                <td>{{ i.user.username }}</td>
+
+                <td>{{ i.product.name }}</td>
+
+                <td>
+                    {% if i.size %}
+                        {{ i.size }}
+                    {% else %}
+                        -
+                    {% endif %}
+                </td>
+
+                <td>{{ i.quantity }}</td>
+
+                <td>₹ {{ i.price }}</td>
+
+                <td>₹ {{ i.total_amount }}</td>
+
+                <td>
+                    {% if i.payment_status %}
+                        Paid
+                    {% else %}
+                        Pending
+                    {% endif %}
+                </td>
+
+                <td>{{ i.created_at|date:"d-m-Y H:i" }}</td>
+
+            </tr>
+
+            {% empty %}
+
+            <tr>
+                <td colspan="10">No Orders Found</td>
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</div>
+
+
         {% elif add_category %}
 
 <div class="form-container">

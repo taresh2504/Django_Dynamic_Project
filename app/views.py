@@ -572,6 +572,28 @@ def show_users(req):
     else:
         return redirect('login')
 
+def show_orders(req):
+
+    if 'a_data' in req.session:
+
+        user_id = req.session.get('a_data')
+        a_data = User.objects.get(id=user_id)
+
+        all_orders = Order.objects.select_related('user', 'product').all().order_by('-created_at')
+
+        return render(
+            req,
+            'admindashboard.html',
+            {
+                'data': a_data,
+                'show_orders': True,
+                'all_orders': all_orders
+            }
+        )
+
+    else:
+        return redirect('login')    
+
 
 def add_product(req):
     if 'a_data' in req.session:

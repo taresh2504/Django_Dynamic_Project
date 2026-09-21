@@ -17,12 +17,32 @@
 <div class="main-box">
     <br>
  
-    <form method="GET" class="search-box" action="{% url 'search' %}">&nbsp;&nbsp;&nbsp;&nbsp;
+    {% comment %} <form method="GET" class="search-box" action="{% url 'search' %}">&nbsp;&nbsp;&nbsp;&nbsp;
     <input type="text" name="q" class="srch-input" placeholder="Search products..." value="{{ query|default:'' }}">
     <button class="srch-button" type="submit">Search</button> &nbsp;&nbsp;
 
     <button type="submit" class="clear-button"><a href="{% url 'search' %}" class="clear-btn">Clear</a></button>
-    </form> 
+    </form>  {% endcomment %}
+
+    <form method="GET" class="search-box" action="{% url 'search' %}">
+
+    <input 
+        type="text" 
+        name="q" 
+        class="srch-input" 
+        placeholder="Search products..."
+        value="{{ query|default:'' }}"
+    >
+
+    <button class="srch-button" type="submit">
+        Search
+    </button>
+
+    <a href="{% url 'search' %}" class="clear-btn">
+        Clear
+    </a>
+
+</form>
 
     
 
