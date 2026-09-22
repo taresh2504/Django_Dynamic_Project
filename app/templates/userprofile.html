@@ -55,67 +55,102 @@
 
     </div>
 
-    {% elif my_orders %}
+  {% elif my_orders %}
 
 <div class="orders-container">
 
     <h2>My Orders</h2>
 
-    <table class="orders-table">
-        <thead>
-            <tr>
-                <th>S.No</th>
-                <th>Order ID</th>
-                <th>Payment ID</th>
-                <th>Payment Signature</th>
-                <th>Product</th>
-                <th>Size</th>
-                <th>Qty</th>
-                <th>Price</th>
-                <th>Total</th>
-                <th>Status</th>
-                <th>Date</th>
-            </tr>
-        </thead>
+    <div class="orders-grid">
 
-        <tbody>
-            {% for o in orders %}
-            <tr>
-                <td>{{ forloop.counter }}</td>
-                <td>{{ o.order_id }}</td>
-                <td>{{ o.razorpay_payment_id }}</td>
-                <td>{{ o.razorpay_signature }}</td>
-                <td>{{ o.product.name }}</td>
-                <td>{{ o.size }}</td>
-                <td>{{ o.quantity }}</td>
-                <td>₹{{ o.price }}</td>
-                <td>₹{{ o.total_amount }}</td>
+        {% for o in orders %}
 
-                <td>
+        <div class="order-card">
+
+            <!-- CARD HEADER -->
+            <div class="order-card-header">
+                <div>
+                    <span class="order-label">Order ID</span>
+                    <strong>{{ o.order_id }}</strong>
+                </div>
+
+                <div class="order-status">
                     {% if o.payment_status %}
-                        Paid
+                        <span class="paid">Paid</span>
                     {% else %}
-                        Pending
+                        <span class="pending">Pending</span>
                     {% endif %}
-                </td>
+                </div>
+            </div>
 
-                <td>{{ o.created_at|date:"d M Y" }}</td>
-            </tr>
-            {% empty %}
-            <tr>
-                <td colspan="9">No Orders Yet</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+            <!-- PRODUCT -->
+            <div class="order-product">
+                <div class="product-info">
+                    <span class="order-label">Product</span>
+                    <h3>{{ o.product.name }}</h3>
+                </div>
+            </div>
+
+            <!-- ORDER DETAILS -->
+            <div class="order-details">
+
+                <div class="detail-item">
+                    <span>Size</span>
+                    <strong>{{ o.size }}</strong>
+                </div>
+
+                <div class="detail-item">
+                    <span>Quantity</span>
+                    <strong>{{ o.quantity }}</strong>
+                </div>
+
+                <div class="detail-item">
+                    <span>Price</span>
+                    <strong>₹{{ o.price }}</strong>
+                </div>
+
+                <div class="detail-item">
+                    <span>Total</span>
+                    <strong>₹{{ o.total_amount }}</strong>
+                </div>
+
+                <div class="detail-item">
+                    <span>Date</span>
+                    <strong>{{ o.created_at|date:"d M Y" }}</strong>
+                </div>
+
+            </div>
+
+            <!-- PAYMENT DETAILS -->
+            <div class="payment-details">
+
+                <div>
+                    <span>Payment ID</span>
+                    <p>{{ o.razorpay_payment_id }}</p>
+                </div>
+
+                <div>
+                    <span>Payment Signature</span>
+                    <p>{{ o.razorpay_signature }}</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        {% empty %}
+
+        <div class="no-orders">
+            <p>No Orders Yet</p>
+        </div>
+
+        {% endfor %}
+
+    </div>
 
 </div>
 
-
-
-
-
-    {% endif %}
+{% endif %}
 </div>
 
 </div>

@@ -217,23 +217,6 @@
     border-radius: 8px;
 }
 
-@media (max-width: 1200px){
-    .newlaunch-itemsbox{
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 768px){
-    .newlaunch-itemsbox{
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 480px){
-    .newlaunch-itemsbox{
-        grid-template-columns: 1fr;
-    }
-}
  
 .ots-link{
     text-decoration: none;
@@ -484,3 +467,354 @@
 .prev{ left: 20px; }
 .next{ right: 20px; }
 
+/* =========================================
+   MOBILE RESPONSIVE - MAX WIDTH 430px
+========================================= */
+
+@media (max-width: 431px){
+
+    /* =========================
+       CATEGORY SECTION
+    ========================= */
+
+    .maincloth-box{
+        width: 100%;
+        gap: 5px;
+        padding: 0 5px;
+        box-sizing: border-box;
+        flex-wrap: wrap;
+    }
+
+    .tshirt-box,
+    .pants-box{
+        width: 78px;
+        gap: 0;
+    }
+
+    .round-image-box{
+        width: 78px;
+        height: 82px;
+    }
+
+    .round-image-box2{
+        width: 78px;
+        height: 82px;
+    }
+
+    .round-photos{
+        width: 58px;
+        height: 58px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .oversizedtshirt-content{
+        width: 78px;
+        height: auto;
+        font-size: 12px;
+        line-height: 16px;
+        padding-top: 5px;
+    }
+
+
+    /* =========================
+       MAIN BANNER
+    ========================= */
+
+    .movement-box{
+        width: 100%;
+        height: 180px;
+        margin-top: 8px;
+        box-sizing: border-box;
+    }
+
+    .image-slider{
+        width: 100%;
+        height: 100%;
+    }
+
+    .slide{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+
+    /* =========================
+       CUSTOMER INFO
+    ========================= */
+
+    .uservisit-box{
+        width: 100%;
+        justify-content: space-around;
+        gap: 5px;
+        box-sizing: border-box;
+    }
+
+    .user-visit{
+        width: 33.33%;
+        height: 65px;
+        margin-top: 18px;
+        text-align: center;
+    }
+
+    .customers-photo{
+        width: 28px;
+        height: 28px;
+        margin-left: 0;
+    }
+
+    .customer-content{
+        font-size: 10px;
+        line-height: 14px;
+        margin-top: 4px;
+    }
+
+
+    /* =========================
+       MOVING PRODUCT ROW
+    ========================= */
+
+    .train-wrapper,
+    .train-wrapper2{
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .summer-escapeboxholder,
+    .summer-escapeboxholder2{
+        gap: 5px;
+    }
+
+    .summer-escapebox img,
+    .summer-escapebox2 img{
+        width: 180px;
+        height: 244px;
+        object-fit: cover;
+        flex-shrink: 0;
+    }
+
+
+    /* =========================
+       NEW LAUNCH
+    ========================= */
+
+    .new-launch{
+        font-size: 23px;
+        margin: 15px 0;
+    }
+
+    .newlaunch-itemsbox{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        padding: 12px;
+        box-sizing: border-box;
+    }
+
+    .newlaunch-items{
+        width: 100%;
+        min-width: 0;
+    }
+
+    .product-img{
+        width: 100%;
+        height: 230px;
+        object-fit: cover;
+        border-radius: 6px;
+    }
+
+    .greytshirt-title{
+        font-size: 12px;
+        padding-inline-start: 4px;
+        line-height: 16px;
+    }
+
+    .prizes{
+        padding-inline-start: 4px;
+    }
+
+    .price,
+    .cut-price{
+        font-size: 12px;
+    }
+
+    .product-variants{
+        gap: 4px;
+        padding-inline-start: 4px;
+        padding-top: 7px;
+        flex-wrap: wrap;
+    }
+
+    .variant-size{
+        width: 20px;
+        height: 16px;
+        font-size: 8px;
+    }
+
+    .sizes{
+        font-size: 8px;
+    }
+
+
+    /* =========================
+       SHOP NOW BUTTON
+    ========================= */
+
+    .shopnow-buttonbox{
+        margin-top: 5px;
+    }
+
+    .shopnow-button{
+        width: 90px;
+        height: 42px;
+        padding-top: 13px;
+        font-size: 11px;
+        border-radius: 12px;
+        box-sizing: border-box;
+    }
+
+
+    /* =========================
+       CONTINUE VIDEO
+    ========================= */
+
+    .continue-videobox{
+        width: 100%;
+        height: 300px;
+        box-sizing: border-box;
+    }
+
+    .continue-video{
+        width: 100%;
+        height: 298px;
+        object-fit: cover;
+    }
+
+
+    /* =========================
+       SHOP BY COLLECTION
+    ========================= */
+
+    .shopbycollection-title{
+        font-size: 23px;
+        margin-top: 15px;
+        margin-bottom: 10px;
+    }
+
+    .collection-box{
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        padding: 12px;
+        box-sizing: border-box;
+    }
+
+    .collection-item{
+        width: 100%;
+        min-width: 0;
+    }
+
+    .collection-img{
+        width: 100%;
+        height: 230px;
+        object-fit: cover;
+        border-radius: 7px;
+    }
+
+
+    /* =========================
+       OVERLAYS FEED
+    ========================= */
+
+    .overlaysfeed-box{
+        width: 100%;
+        display: flex;
+        gap: 8px;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    .overlaysfeed-box video{
+        width: calc((100% - 16px) / 3);
+        height: 300px;
+        object-fit: cover;
+        flex-shrink: 0;
+    }
+
+
+    /* =========================
+       COMMUNITY SQUAD
+    ========================= */
+
+    .community-squad{
+        width: 100%;
+        height: auto;
+        gap: 8px;
+        margin-top: 15px;
+        padding: 5px 10px;
+        box-sizing: border-box;
+        overflow-x: auto;
+        /* justify-content: flex-start; */
+        justify-content: center;
+    }
+
+    .csimg-box{
+        width: 65px;
+        height: 65px;
+        min-width: 65px;
+    }
+
+
+    /* =========================
+       SLIDER
+    ========================= */
+
+    .slider{
+        width: 100%;
+        padding: 30px 0;
+        overflow: hidden;
+    }
+
+    .slide-track{
+        gap: 10px;
+    }
+
+    .card{
+        width: 150px;
+        height: 210px;
+    }
+
+    .card.active{
+        transform: scale(1.05);
+    }
+
+    .card span{
+        bottom: 10px;
+        padding: 5px 10px;
+        font-size: 10px;
+    }
+
+    .prev,
+    .next{
+        width: 32px;
+        height: 32px;
+    }
+
+    .prev{
+        left: 8px;
+    }
+
+    .next{
+        right: 8px;
+    }
+
+
+    /* =========================
+       EXTRA SPACE
+    ========================= */
+
+    .extraspace{
+        margin-top: 1px;
+    }
+
+}

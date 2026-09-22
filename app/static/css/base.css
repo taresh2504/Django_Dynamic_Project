@@ -7,6 +7,15 @@
     gap: 550px;
 }
 
+.hamburger{
+    display: none;
+}
+
+.hamburger i{
+    font-size: 22px;
+    color: black;
+}
+
 .nav-logoholder{
     display: flex;
     justify-content: center;
@@ -514,3 +523,351 @@
     margin-left: 111.2px;
 }
 
+@media (max-width: 431px){
+
+    /* =========================
+       NAVBAR
+    ========================= */
+
+    .navbar-container{
+        width: 100%;
+        height: auto;
+        min-height: 65px;
+        gap: 0;
+        justify-content: space-between;
+        padding: 5px 10px;
+        box-sizing: border-box;
+    }
+
+    .nav-logoholder{
+        width: auto;
+        gap: 0;
+    }
+
+    .navbar-holder{
+        display: none;
+    }
+
+    .nav-logo{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .logo{
+        width: 55px;
+        height: 70px;
+    }
+
+    .icon-box{
+        gap: 15px;
+    }
+
+    .icon,
+    .info-icon{
+        width: 19px;
+        height: 19px;
+    }
+
+
+    /* =========================
+       OFFER BAR
+    ========================= */
+
+    .offer-bar{
+        width: 100%;
+        height: 23px;
+        margin-top: 2px;
+    }
+
+    .offer-content{
+        padding-top: 2px;
+    }
+
+    .offer-content span{
+        font-size: 11px;
+        margin-right: 35px;
+    }
+
+    .offer-dot{
+        font-size: 12px !important;
+        margin-top: -3px;
+    }
+
+        /* =========================
+       HAMBURGER MENU
+    ========================= */
+
+    .hamburger{
+        display: block;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+    }
+
+    .hamburger i{
+        font-size: 21px;
+    }
+
+    .mobile-menu{
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 85%;
+        max-width: 350px;
+        height: 100vh;
+        background-color: white;
+        z-index: 20000;
+        box-sizing: border-box;
+        padding: 20px;
+        box-shadow: 4px 0 15px rgba(0,0,0,0.15);
+
+        transition: left 0.3s ease;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mobile-menu.active{
+        left: 0;
+    }
+
+    .mobile-menu-header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #ddd;
+        margin-bottom: 10px;
+    }
+
+    .mobile-menu-header span:first-child{
+        font-family: Assistant, sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .mobile-menu-close{
+        cursor: pointer;
+        font-size: 22px;
+    }
+
+    .mobile-menu > a{
+        text-decoration: none;
+        color: rgba(0,0,0,0.81);
+        font-family: Assistant, sans-serif;
+        font-size: 15px;
+        padding: 14px 5px;
+        border-bottom: 1px solid #eeeeee;
+    }
+
+    .mobile-menu > a:active{
+        background-color: #f5f5f5;
+    }
+
+
+    /* =========================
+       MOBILE MENU ICONS
+    ========================= */
+
+    .mobile-menu-icons{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 25px;
+        padding-top: 20px;
+        border-top: 1px solid #ddd;
+    }
+
+    .mobile-menu-icons a{
+        text-decoration: none;
+        color: black;
+        font-family: Assistant, sans-serif;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 7px;
+    }
+
+    .mobile-menu-icons .icon,
+    .mobile-menu-icons .info-icon{
+        width: 22px;
+        height: 22px;
+        object-fit: cover;
+    }
+
+    .mobile-menu-icons span{
+        font-size: 11px;
+    }
+
+
+    /* =========================
+       ACCOUNT BOX
+    ========================= */
+
+    .account-box{
+        top: 70px;
+        left: 5px;
+        width: calc(100% - 10px);
+        max-width: 352px;
+        height: auto;
+        min-height: 200px;
+        box-sizing: border-box;
+    }
+
+    .account-crossholder{
+        justify-content: space-between;
+        gap: 0;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+    .account-name{
+        font-size: 17px;
+    }
+
+    .shop-signupbox{
+        width: calc(100% - 40px);
+        margin-left: 20px;
+        box-sizing: border-box;
+    }
+
+    .other-signupbox{
+        width: calc(100% - 40px);
+        margin-left: 20px;
+        box-sizing: border-box;
+    }
+
+
+    /* =========================
+       CART BOX
+    ========================= */
+
+    .cartmain-box{
+        width: 100%;
+        max-width: 400px;
+        height: 100vh;
+    }
+
+    #cartcross-mark{
+        margin-left: auto;
+        margin-right: 18px;
+        margin-top: 18px;
+        width: fit-content;
+    }
+
+    .secondcart-box{
+        width: calc(100% - 20px);
+        margin-left: 10px;
+        box-sizing: border-box;
+    }
+
+    .cartbox-shoppingbutton{
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    .footermain-box{
+        width: 100%;
+        height: auto;
+        min-height: 900px;
+        margin-top: 100px;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .footersecond-box{
+        width: 100%;
+        height: auto;
+        margin-left: 0;
+        margin-top: 10px;
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+
+    .footer-overlays{
+        font-size: 90px;
+        height: auto;
+        width: 100%;
+        letter-spacing: 3px;
+        margin-top: 0;
+        text-align: center;
+    }
+
+    .footer-heading{
+        font-size: 13px;
+        line-height: 18px;
+        text-align: center;
+    }
+
+    .footer-subheading{
+        font-size: 11px;
+        line-height: 16px;
+        text-align: center;
+    }
+
+
+    /* =========================
+       FOOTER EMAIL
+    ========================= */
+
+    .footeremail-box{
+        width: 100%;
+    }
+
+    .footer-search{
+        width: 100%;
+        max-width: 350px;
+        height: 45px;
+        box-sizing: border-box;
+        padding-left: 18px !important;
+    }
+
+    .footer-arrow{
+        margin-top: -31px;
+        margin-left: 0;
+        align-self: flex-end;
+        margin-right: 25px;
+    }
+
+
+    /* =========================
+       FOOTER COLUMNS
+    ========================= */
+
+    .footer-flexbox{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px 10px;
+        align-items: start;
+    }
+
+    .footerend-headingA{
+        gap: 7px;
+        padding-left: 0;
+        margin: 0;
+        font-size: 11px;
+    }
+
+    .headline{
+        font-size: 12px;
+    }
+
+    .relax-fit{
+        font-size: 11px;
+        line-height: 15px;
+    }
+
+}

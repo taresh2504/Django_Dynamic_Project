@@ -9,8 +9,6 @@
     {% endblock title %}
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    {% comment %} <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> {% endcomment %}
-
     {% block favicon %}
     <link rel="shortcut icon" href="{% static 'images/logo4.jpg' %}" type="image/x-icon">
     {% endblock favicon %} 
@@ -29,6 +27,57 @@
 <body>
     <div class="main-container">
         <div class="navbar-container">
+            <div class="hamburger" id="hamburger">
+    <i class="fa-solid fa-bars"></i>
+</div>
+
+<div class="mobile-menu" id="mobileMenu">
+
+    <div class="mobile-menu-header">
+        <span>MENU</span>
+
+        <span class="mobile-menu-close" id="mobileMenuClose">
+            <i class="fa-solid fa-xmark"></i>
+        </span>
+    </div>
+
+    <a href="{% url 'shopbycategory' %}">Shop By Category</a>
+
+    <a href="{% url 'shopbycollection' %}">Shop By Collection</a>
+
+    <a href="{% url 'aboutus' %}">About Us</a>
+
+    <a href="{% url 'policy' %}">Policy</a>
+
+    <a href="{% url 'fitguide' %}">Fit Guide</a>
+
+    <div class="mobile-menu-icons">
+
+        <a href="{% url 'search' %}">
+            <img class="icon" src="{% static 'images/SearchIconLogoImage.png' %}" alt="search">
+            <span>Search</span>
+        </a>
+
+        {% if info %}
+        <a href="{% url 'userprofile' pk=info.id %}">
+            <img class="info-icon" src="{{ info.photo.url }}" alt="profile">
+            <span>Profile</span>
+        </a>
+        {% else %}
+        <a href="{% url 'account' %}">
+            <img class="icon" src="{% static 'images/UserLogoImage.png' %}" alt="user">
+            <span>Login</span>
+        </a>
+        {% endif %}
+
+        <a href="{% url 'cart_page' %}">
+            <img class="icon" src="{% static 'images/BagLogoImage.png' %}" alt="cart">
+            <span>Cart</span>
+        </a>
+
+    </div>
+
+</div>
             <div class="nav-logoholder">
                 <div class="navbar-holder">
                     <div><a class="list" href="{% url 'shopbycategory' %}">Shop By Category</a></div>

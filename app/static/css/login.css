@@ -86,3 +86,69 @@ input:focus {
     font-size: 13px;
     color: blueviolet;
 }
+
+/* =========================
+   MOBILE - MAX WIDTH 430px
+========================= */
+
+@media (max-width: 430px){
+
+    .main-box{
+        width: 100%;
+        min-height: 100vh;
+        height: auto;
+        padding: 20px 15px;
+        box-sizing: border-box;
+    }
+
+    .login-box{
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        min-height: 400px;
+        box-sizing: border-box;
+        padding: 10px 15px 20px;
+    }
+
+    .overlays-title{
+        font-size: 20px;
+    }
+
+    .signup-title{
+        font-size: 20px;
+        margin-left: 0;
+    }
+
+    .form-box{
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .name-box{
+        width: 100%;
+        height: 40px;
+        box-sizing: border-box;
+        padding: 0 10px;
+    }
+
+    .register-button{
+        width: 100%;
+        height: 40px;
+    }
+
+    .error-msg{
+        display: block;
+        font-size: 12px;
+        margin: 5px 0;
+    }
+
+    .signup-loginbox{
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    .forgotpassword-box{
+        font-size: 12px;
+    }
+
+}

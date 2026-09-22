@@ -1,18 +1,63 @@
-{% if payment %}
-        <form action="{% url 'pay_status'  %}" class="title" method="post">
-             {% csrf_token %} 
-             <script src="https://checkout.razorpay.com/v1/checkout.js" data-key="rzp_test_pr99iascS1WRtU"
-              data-amount="{{ payment.amount }}"
-               data-currency="{{ payment.currency }}" 
-               data-order_id="{{ payment.id }}" 
-               data-buttontext="Pay with Razorpay"
-                data-name="Neeraj Ecom" 
-                data-description="Thanku for visiting My Site"
-                 data-image="https://example.com/your_logo.jpg" 
-                 data-prefill.name="Neeraj Kumar" 
-                 data-prefill.email="Neeraj.Patel@gmail.com"
-                 data-theme.color="#2520adff" >
+{% load static %}
 
-             </script> <input type="hidden" custom="Hidden Element" name="hidden">
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/payment.css' %}">
+{% endblock css %} 
+
+{% block title %}
+<title>Payment</title>
+{% endblock title %} 
+
+    {% if payment %}
+
+    <div class="payment-container">
+
+        <h1 class="payment-title">Ready for Payment</h1>
+
+        <p class="payment-text">
+            Complete your payment securely with Razorpay
+        </p>
+
+        <form action="{% url 'pay_status' %}" class="payment-form" method="post">
+
+            {% csrf_token %}
+
+            <script 
+                src="https://checkout.razorpay.com/v1/checkout.js"
+
+                data-key="rzp_test_pr99iascS1WRtU"
+
+                data-amount="{{ payment.amount }}"
+
+                data-currency="{{ payment.currency }}"
+
+                data-order_id="{{ payment.id }}"
+
+                data-buttontext="Pay with Razorpay"
+
+                data-name="Neeraj Ecom"
+
+                data-description="Thanku for visiting My Site"
+
+                data-image="https://example.com/your_logo.jpg"
+
+                data-prefill.name="Neeraj Kumar"
+
+                data-prefill.email="Neeraj.Patel@gmail.com"
+
+                data-theme.color="#2520adff">
+                
+            </script>
+
+            <input 
+                type="hidden" 
+                custom="Hidden Element" 
+                name="hidden"
+            >
+
         </form>
-        {% endif %}
+
+    </div>
+
+    {% endif %}
+

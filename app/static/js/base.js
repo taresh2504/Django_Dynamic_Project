@@ -114,3 +114,23 @@ document.addEventListener("DOMContentLoaded", function(){
 //     }
 
 });
+
+const hamburger = document.getElementById("hamburger");
+const mobileMenu = document.getElementById("mobileMenu");
+const mobileMenuClose = document.getElementById("mobileMenuClose");
+
+if (hamburger && mobileMenu) {
+
+    hamburger.addEventListener("click", function () {
+        mobileMenu.classList.add("active");
+    });
+
+}
+
+if (mobileMenuClose && mobileMenu) {
+
+    mobileMenuClose.addEventListener("click", function () {
+        mobileMenu.classList.remove("active");
+    });
+
+}

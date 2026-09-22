@@ -125,5 +125,117 @@
     font-size: 13px;
 }
 
+/* =========================
+   MOBILE - MAX WIDTH 430px
+========================= */
 
+@media (max-width: 430px){
+
+    /* MAIN BOX */
+
+    .main-box{
+        width: 100%;
+        min-height: 100vh;
+        height: auto;
+        padding: 20px 15px;
+        box-sizing: border-box;
+        align-items: flex-start;
+    }
+
+
+    /* SIGNUP BOX */
+
+    .signup-box{
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        min-height: 650px;
+        box-sizing: border-box;
+        padding: 10px 15px 20px;
+    }
+
+
+    /* HEADINGS */
+
+    .overlays-title{
+        font-size: 20px;
+    }
+
+    .signup-title{
+        font-size: 18px;
+        margin-left: 0;
+    }
+
+    .signup-line{
+        font-size: 12px;
+        margin-left: 0;
+    }
+
+
+    /* FORM */
+
+    .form-box{
+        width: 100%;
+        margin-left: 0;
+    }
+
+
+    /* INPUTS */
+
+    .name-box{
+        width: 100%;
+        height: 35px;
+        box-sizing: border-box;
+        padding: 0 10px;
+    }
+
+
+    /* ADDRESS */
+
+    .address-box{
+        width: 100%;
+        height: 50px;
+        box-sizing: border-box;
+    }
+
+
+    /* IMAGE INPUT */
+
+    .image-file{
+        width: 100%;
+        height: 35px;
+        box-sizing: border-box;
+        padding: 8px;
+    }
+
+
+    /* REGISTER BUTTON */
+
+    .register-button{
+        width: 100%;
+        height: 40px;
+    }
+
+
+    /* ERRORS */
+
+    .error-box{
+        font-size: 11px;
+        height: auto;
+    }
+
+    .error-box ul{
+        margin: 0;
+        padding: 0;
+    }
+
+
+    /* LOGIN LINK */
+
+    .signup-loginbox{
+        font-size: 12px;
+        margin-top: 10px;
+    }
+
+}
 

@@ -5,11 +5,38 @@
 {% endblock css %} 
 
 {% block content %}
-<h1 class="success-msg">Payment succes</h1>
+<div class="success-page">
+<div class="success-container">
 
-<form action="{% url 'landing' %}" method="post">
-    {% csrf_token %}
-    <button type="submit">Go to Home Page</button>
-</form>
+        <div class="success-icon">
+            ✓
+        </div>
+
+        <h1>Payment Successful 🎉</h1>
+
+        <p>
+            Thank you for your payment.
+        </p>
+
+        <p class="redirect-message">
+            Redirecting you to the home page...
+        </p>
+
+        <form action="{% url 'landing' %}" method="post">
+
+            {% csrf_token %}
+
+            <button type="submit">
+                Go to Home Page
+            </button>
+
+        </form>
+
+    </div>
+</div>    
 {% endblock content %} 
+
+{% block js %} 
+<script src="{% static 'js/success.js' %}"></script>
+{% endblock js %}
 
