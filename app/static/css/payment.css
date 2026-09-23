@@ -54,3 +54,62 @@ body {
 
 
 
+@media (max-width:431px){
+
+    body{
+        width:100%;
+        min-height:100vh;
+        padding:15px 10px;
+        box-sizing:border-box;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        overflow-x:hidden;
+    }
+
+    .payment-container{
+        width:100%;
+        max-width:420px;
+        min-height:260px;
+        padding:30px 20px;
+        box-sizing:border-box;
+        border-radius:12px;
+    }
+
+    .payment-title{
+        width:100%;
+        box-sizing:border-box;
+        font-size:24px;
+        line-height:30px;
+        margin:0 0 12px;
+        text-align:center;
+    }
+
+    .payment-text{
+        width:100%;
+        box-sizing:border-box;
+        font-size:13px;
+        line-height:20px;
+        margin:0 0 25px;
+        text-align:center;
+    }
+
+    .payment-form{
+        width:100%;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    }
+
+    .razorpay-payment-button{
+        width:100% !important;
+        min-width:0 !important;
+        max-width:250px;
+        height:42px !important;
+        font-size:13px !important;
+    }
+
+}
+
+
+

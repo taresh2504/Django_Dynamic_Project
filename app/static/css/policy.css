@@ -39,3 +39,82 @@
     font-family: Assistant,sans-serif;
     color: rgba(0, 0, 0, 0.81);
 }
+
+
+/* =========================================
+   MOBILE RESPONSIVE - PRIVACY POLICY
+   ========================================= */
+
+@media (max-width: 431px){
+
+    /* ---------- PAGE HEADING ---------- */
+
+    .heading{
+        font-size: 16px;
+        text-align: center;
+
+        margin-top: 5px;
+        margin-bottom: 15px;
+    }
+
+
+    /* ---------- POLICY MAIN BOX ---------- */
+
+    .policy-bodybox{
+        width: 100%;
+        height: auto;
+
+        margin-left: 0;
+        margin-right: 0;
+
+        padding: 0 15px 30px;
+
+        box-sizing: border-box;
+
+        overflow-x: hidden;
+    }
+
+
+    /* ---------- FIRST POLICY BOX ---------- */
+
+    .policy-box1{
+        width: 100%;
+        height: auto;
+
+        box-sizing: border-box;
+    }
+
+
+    /* ---------- POLICY TEXT ---------- */
+
+    .policy-content,
+    .policy-content2{
+        width: 100%;
+        height: auto;
+
+        box-sizing: border-box;
+
+        text-align: left;
+
+        font-size: 13px;
+        line-height: 21px;
+
+        font-family: Assistant,sans-serif;
+
+        margin-top: 0;
+        margin-bottom: 18px;
+
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+    }
+
+
+    /* ---------- LONG URL / EMAIL TEXT ---------- */
+
+    .policy-content,
+    .policy-content2{
+        overflow-wrap: anywhere;
+    }
+
+}
+

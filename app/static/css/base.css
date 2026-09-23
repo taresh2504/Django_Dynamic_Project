@@ -1,3 +1,28 @@
+/* .navbar-container{
+    border: 0.5px solid none;
+    height: 72px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 550px;
+}
+
+.hamburger{
+    display: none;
+}
+
+.hamburger i{
+    font-size: 22px;
+    color: black;
+}
+
+.nav-logoholder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 121px;
+} */
+
 .navbar-container{
     border: 0.5px solid none;
     height: 72px;
@@ -8,6 +33,10 @@
 }
 
 .hamburger{
+    display: none;
+}
+
+.mobile-menu{
     display: none;
 }
 

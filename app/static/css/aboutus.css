@@ -11,3 +11,58 @@
 .aboutus-desc{
     text-align: center;
 }
+
+
+/* =========================================
+   MOBILE RESPONSIVE - ABOUT US
+   ========================================= */
+
+@media (max-width: 431px){
+
+    .main-box{
+        width: 100%;
+        height: auto;
+        min-height: calc(100vh - 65px);
+        box-sizing: border-box;
+
+        padding: 0 15px 30px;
+        overflow-x: hidden;
+    }
+
+
+    /* ---------- HEADING ---------- */
+
+    .about-usheading{
+        font-size: 24px;
+        line-height: 30px;
+
+        text-align: center;
+
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+
+    /* ---------- DESCRIPTION ---------- */
+
+    .aboutus-desc{
+        width: 100%;
+        box-sizing: border-box;
+
+        font-size: 14px;
+        line-height: 22px;
+
+        text-align: center;
+
+        margin: 0 auto;
+    }
+
+
+    /* ---------- BR TAG SPACING ---------- */
+
+    .main-box br{
+        line-height: 10px;
+    }
+
+}
+

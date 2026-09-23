@@ -352,7 +352,7 @@ z-index:10;
     border-radius: 8px;
 }
 
-@media (max-width: 1200px){
+/* @media (max-width: 1200px){
     .newlaunch-itemsbox{
         grid-template-columns: repeat(3, 1fr);
     }
@@ -368,7 +368,7 @@ z-index:10;
     .newlaunch-itemsbox{
         grid-template-columns: 1fr;
     }
-}
+} */
  
 .ots-link{
     text-decoration: none;
@@ -468,3 +468,148 @@ z-index:10;
     margin-bottom: 10px;
     text-align: center;
 }
+
+
+/* =========================================
+   MOBILE RESPONSIVE - SHOP BY COLLECTION
+   ========================================= */
+
+@media (max-width: 431px){
+
+    /* ---------- MAIN BOX ---------- */
+
+    .mainbox{
+        width: 100%;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+
+
+    /* ---------- SECTION TITLE ---------- */
+
+    .section-title{
+        font-size: 20px;
+        font-weight: 600;
+        text-align: center;
+
+        margin-top: 15px;
+        margin-bottom: 8px;
+    }
+
+
+    /* ---------- PRODUCT GRID ---------- */
+
+    .newlaunch-itemsbox{
+        width: 100%;
+        box-sizing: border-box;
+
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 18px 10px;
+
+        padding: 10px;
+    }
+
+
+    /* ---------- PRODUCT CARD ---------- */
+
+    .newlaunch-items{
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+
+
+    /* ---------- PRODUCT IMAGE ---------- */
+
+    .product-img{
+        width: 100%;
+        height: 220px;
+
+        object-fit: cover;
+        display: block;
+
+        border-radius: 6px;
+    }
+
+
+    /* ---------- PRODUCT NAME ---------- */
+
+    .greytshirt-title{
+        display: block;
+
+        width: 100%;
+        box-sizing: border-box;
+
+        font-size: 12px;
+        line-height: 16px;
+
+        padding-inline-start: 3px;
+        padding-top: 5px;
+
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+
+    /* ---------- PRICE ---------- */
+
+    .prizes{
+        display: block;
+        padding-inline-start: 3px;
+        padding-top: 2px;
+    }
+
+    .price{
+        font-size: 12px;
+    }
+
+    .cut-price{
+        font-size: 11px;
+    }
+
+
+    /* ---------- SIZE BUTTONS ---------- */
+
+    .product-variants{
+        width: 100%;
+        box-sizing: border-box;
+
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+
+        gap: 4px;
+
+        padding-inline-start: 3px;
+        padding-top: 7px;
+    }
+
+    .variant-size{
+        width: 21px;
+        height: 17px;
+
+        font-size: 8px;
+
+        border-radius: 3px;
+
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+
+    .sizes{
+        font-size: 8px;
+        line-height: 17px;
+    }
+
+
+    /* ---------- SECTION SEPARATOR ---------- */
+
+    .mainbox hr{
+        margin: 18px 10px;
+    }
+
+}
+

@@ -22,3 +22,47 @@
     font-weight: 400;
     font-family: Assistant,sans-serif;
 }
+
+
+@media (max-width:431px){
+
+    .title{
+        width:100%;
+        box-sizing:border-box;
+        color:rgba(0, 0, 0, 0.81);
+        font-size:20px;
+        font-style:normal;
+        font-weight:700;
+        font-family:Assistant,sans-serif;
+        text-transform:uppercase;
+        text-align:center;
+        margin:10px 0 20px;
+        padding:0 10px;
+    }
+
+    .content-block{
+        width:100%;
+        height:auto;
+        box-sizing:border-box;
+        margin-left:0;
+        margin-right:0;
+        padding:0 15px 30px;
+        overflow-x:hidden;
+    }
+
+    .content1{
+        width:100%;
+        box-sizing:border-box;
+        color:rgba(0, 0, 0, 0.81);
+        font-size:13px;
+        line-height:21px;
+        font-style:normal;
+        font-weight:400;
+        font-family:Assistant,sans-serif;
+        margin:0 0 18px;
+        overflow-wrap:break-word;
+        word-wrap:break-word;
+    }
+
+}
+
