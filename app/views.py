@@ -160,7 +160,8 @@ def new_pass(req):
             send_mail(
             "otp from django server",
             f'your forgot password otp is {otp}',
-            "from@example.com",
+            "taresh25202@gmail.com",
+            # "from@example.com",
             [e],
             fail_silently=False,
         )

@@ -11,16 +11,21 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
 from pathlib import Path
+from dotenv import load_dotenv
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+load_dotenv(BASE_DIR / '.env')
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-18%qoc2nf8!^%l!c^fdysn34o-0v6p10b021m^sc@cq*a^l)by'
+# SECRET_KEY = 'django-insecure-18%qoc2nf8!^%l!c^fdysn34o-0v6p10b021m^sc@cq*a^l)by'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -80,13 +85,24 @@ WSGI_APPLICATION = 'project.wsgi.application'
 #     }
 # }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'overlays',
+#         'USER': 'root',
+#         'PASSWORD': 'Tandy@123',
+#         'PORT': 3306
+#     }
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'overlays',
-        'USER': 'root',
-        'PASSWORD': 'Tandy@123',
-        'PORT': 3306
+        'NAME': os.getenv('DB_NAME'),
+        'USER': os.getenv('DB_USER'),
+        'PASSWORD': os.getenv('DB_PASSWORD'),
+        'HOST': os.getenv('DB_HOST'),
+        'PORT': os.getenv('DB_PORT'),
     }
 }
 
@@ -134,5 +150,10 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
-EMAIL_HOST_USER = 'taresh25202@gmail.com'
-EMAIL_HOST_PASSWORD = 'wiwh cqyg skup edyp'
+# EMAIL_HOST_USER = 'taresh25202@gmail.com'
+# EMAIL_HOST_PASSWORD = 'dnzdedhowfrzmshg'
+
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
+
+# dnzd edho wfrz mshg
