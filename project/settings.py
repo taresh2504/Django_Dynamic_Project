@@ -24,7 +24,7 @@ load_dotenv(BASE_DIR / '.env')
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'django-insecure-18%qoc2nf8!^%l!c^fdysn34o-0v6p10b021m^sc@cq*a^l)by'
+
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -85,15 +85,6 @@ WSGI_APPLICATION = 'project.wsgi.application'
 #     }
 # }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'overlays',
-#         'USER': 'root',
-#         'PASSWORD': 'Tandy@123',
-#         'PORT': 3306
-#     }
-# }
 
 DATABASES = {
     'default': {
@@ -150,8 +141,6 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
-# EMAIL_HOST_USER = 'taresh25202@gmail.com'
-# EMAIL_HOST_PASSWORD = 'dnzdedhowfrzmshg'
 
 EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
