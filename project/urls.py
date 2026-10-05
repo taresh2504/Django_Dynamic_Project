@@ -74,10 +74,18 @@ urlpatterns = [
     path('fitguide/',views.fitguide,name='fitguide'),
     path('otc/',views.otc,name='otc'),
     path('success/',views.success,name='success'),
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + [
+]+ [
+    re_path(r'^media/(?P<path>.*)$', serve, {
+        'document_root': settings.MEDIA_ROOT,
+    }),
     re_path(r'^static/(?P<path>.*)$', serve, {
         'document_root': settings.STATIC_ROOT,
     }),
 ]
+# + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + [
+#     re_path(r'^static/(?P<path>.*)$', serve, {
+#         'document_root': settings.STATIC_ROOT,
+#     }),
+# ]
 # + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 # + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
